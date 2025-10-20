@@ -1,0 +1,25 @@
+Do dalszych eksperymentów i analiz na wszystkich zajęciach laboratoryjnych będziemy potrzebowali trzech rodzajów wykresów:
+
+1. Pokazujący każdy przebieg ewolucji (najlepszy osobnik w danym pokoleniu) jako jedną linię; kolory takie same dla wszystkich przebiegów o identycznych wartościach parametrów (czyli w naszym przypadku o identycznej sile mutacji). Pomocna może okazać się klasa deap.tools.Statistics. Taki wykres ma wyglądać podobnie do:
+
+2. Zagregowana wersja powyższego wykresu, gdzie z powyższych linii o danym kolorze liczymy średnią i odchylenie standardowe. Odchylenie (być może dla czytelności podzielone przez jakąś stałą, żeby obszary na siebie nie nachodziły) pokazujemy półprzeźroczyście, na przykład tak:
+
+3. Najbardziej zagregowana wersja, czyli wykresy pudełkowe porównujące dla różnych parametryzacji jakość (tylko osobników z Hall of Fame, po jednym na każdy przebieg ewolucji) i czas działania (jedna wartość na każdy przebieg ewolucji), na przykład:
+
+Możesz dowolnie modyfikować źródło FramsticksEvolution.py tak, żeby było Ci wygodnie przekazywać informacje w obie strony, zapisywać logi oraz wyniki do plików itd. - ono służy jako przykład i punkt startowy. Jeśli chcesz mieć dostęp do parametru siły mutacji bezpośrednio ze źródła w pythonie, po wykonaniu import frams ten parametr nazywa się frams.GenMan.f9_mut (to jest obiekt, jego metoda _value() przekonwertuje go do float).
+
+Pora na przeprowadzenie docelowych eksperymentów i przetestowanie, czy Twoje pierwotne przewidywania o wpływie siły mutacji na przebieg ewolucji były słuszne. Obliczenia są jednowątkowe, więc jeśli chcesz wykorzystać więcej rdzeni, możesz uruchomić poszczególne procesy ewolucyjne równolegle - na przykład korzystając z parallel.
+
+Zbieżność
+
+Wcześniej - do testowania - ustawialiśmy parametry -popsize i -generations na małe wartości. Teraz ustaw -popsize na co najmniej 50, a -generations oraz -tournament na tyle, żeby zapewnić zbieżność lub nikłą szansę poprawy (z braku bardziej zaawansowanych wykresów, kieruj się tu pierwszym omówionym na początku tego pytania rodzajem wykresu).
+
+Opcjonalnie: możesz zmodyfikować DEAP'a tak, żeby podawać "okres stagnacji" i ewolucja sama będzie się zatrzymywała, jeśli przez zadaną liczbę pokoleń (np. 50) nie nastąpi polepszenie osobnika w Hall of Fame. Taki mechanizm przyda się też przy kolejnych laboratoriach, bo uwalnia nas od ustalania a priori stałej liczby pokoleń.
+
+To ważne, żeby nie kończyć ewolucji kiedy zachodzą poprawy rozwiązania, bo wtedy moglibyśmy wyciągnąć fałszywe wnioski. Dlatego dobierz poprawnie moment zakończenia.
+
+Odpowiedź
+
+W odpowiedzi podaj użyte wartości parametrów, załącz trzy rodzaje uzyskanych wykresów (nazywaj pliki zgodnie z ich zawartością), zinterpretuj je i napisz, czy Twoje pierwotne przypuszczenia okazały się słuszne. Co dokładnie spowodowało, że ewolucja dla pewnych wartości siły mutacji dała gorsze wyniki? Czego nas to uczy o pożądanym sposobie tworzenia "rozwiązania sąsiedniego" z "rozwiązania bieżącego" w optymalizacji? Czy te wartości siły mutacji, które przegrały w obecnej konkurencji, mają jednak jakieś zalety i czy możesz wyobrazić sobie sytuacje, w których właśnie te wartości będą najkorzystniejsze?
+
+Na podstawie naszych wcześniejszych dyskusji oraz doświadczeń zgodziliśmy się, że zwiększanie rozmiaru sąsiedztwa powinno przynosić lepsze wyniki w optymalizacji lokalnej, ponieważ zmniejsza to liczbę lokalnych optimów. Ponieważ mutanci mogą być uznani za odpowiednik sąsiadów, a mutacja eksploruje sąsiedztwo, czy uzyskane przez Ciebie wyniki negują i unieważniają nasze wcześniejsze wnioski i oczekiwania? (ponieważ wyższa intensywność mutacji powoduje więcej zmian w rozwiązaniu, więc odpowiada większemu sąsiedztwu, prawda?) Wyjaśniając tę pozorną sprzeczność i porównując rozmiar sąsiedztwa w optymalizacji lokalnej z intensywnością mutacji w tym eksperymencie, pomocna może okazać się metafora koła (wypełniony obszar) oraz okręgu (sam obwód).

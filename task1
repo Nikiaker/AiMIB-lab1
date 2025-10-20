@@ -1,0 +1,46 @@
+Przygotujemy teraz infrastrukturę do dalszych eksperymentów w ramach zajęć laboratoryjnych. W pliku run-deap-examples.cmd masz przykłady różnych wywołań ewolucji prowadzonej przez framework DEAP. Jest to jeden z popularniejszych frameworków ewolucyjnych w pythonie. W przypadku wątpliwości, jak on konkretnie realizuje optymalizację ewolucyjną, możesz zajrzeć do dokumentacji.
+
+Funkcje w źródle FramsticksEvolution.py pokazują, jak podłączyć zupełnie niezależny problem optymalizacyjny do architektury DEAPa. Zobacz, jak podłączona jest mutacja, krzyżowanie, generowanie populacji początkowej i ocena osobnika. Następnie uruchom szybki testowy przebieg ewolucji (zanim uruchomisz, przeczytaj opis parametrów poniżej):
+
+python FramsticksEvolution.py -path $DIR_WITH_FRAMS_LIBRARY -sim "eval-allcriteria.sim;deterministic.sim;sample-period-2.sim" -opt vertpos -max_numparts 30 -max_numgenochars 50 -initialgenotype /*9*/BLU -popsize 50 -generations 20 -hof_size 1
+
+Znaczenie użytych parametrów:
+
+-sim "eval-allcriteria.sim;deterministic.sim;sample-period-2.sim" - za pomocą tego argumentu wczytujemy sukcesywnie ustawienia z plików z rozszerzeniem .sim. Te pliki muszą być skopiowane do podkatalogu data/ w dystrybucji Framsticks (w przeciwnym razie trzeba by podawać do nich pełne ścieżki). Budowa wszystkich plików danych używanych przez Framsticks jest prosta: składają się z obiektów oddzielonych pustą linią (obejrzyj w edytorze tekstowym kilka plików .sim). Każdy obiekt jest definiowany przez jego nazwę (pierwsza linia), a potem następuje sekcja złożona z linii nazwa_parametru:wartość.
+Moglibyśmy ustawiać wartości parametrów bezpośrednio w źródle w pythonie, ale używanie argumentu pozwala zachować na razie niezmienione źródło i obsługiwać wszystko za pomocą argumentów linii komend.
+-opt vertpos - wybieramy kryterium optymalizacji: "vertpos". Podczas oceny genotypu (funkcja frams_evaluate()), środowisko Framsticks zwróci słownik z wartościami różnych kryteriów (takich jak liczba elementów ocenianej konstrukcji, jej prędkość przemieszczania się, liczba kroków symulacji). "vertpos" odpowiada współrzędnej pionowej środka ciężkości ocenianej konstrukcji - i właśnie to będziemy maksymalizowali.
+-max_numparts 30 - konstrukcje powyżej 30 elementów ("Parts") dostaną fitness=FITNESS_VALUE_INFEASIBLE_SOLUTION i selekcja ich nie wybierze.
+-max_numgenochars 50 - analogicznie jak powyżej, zniechęcamy ewolucję do przekraczania długości genotypów 50.
+-initialgenotype /*9*/BLU - zaczynamy ewolucję od prostej konstrukcji, która ma już środek ciężkości nieco powyżej podłoża.
+-popsize 50 - na razie szybkie testy, więc mała populacja
+-generations 20 - na razie szybkie testy, więc mało pokoleń
+-hof_size 1 - rozmiar "Hall of Fame": podczas ewolucji zapamiętujemy jednego najlepszego osobnika (ale w DEAPie domyślnie nie działa elitaryzm)
+w odpowiedzi napisz, ile sztuk osobników (konkretna liczba, nie ułamek) będzie w każdym pokoleniu tego eksperymentu mutowanych, ile krzyżowanych, w jakiej kolejności te operacje są wykonywane w DEAPie, czy te dwa zbiory osobników mogą lub muszą się nakładać, oraz czy w kolejnym pokoleniu mogą znaleźć się osobniki niezmienione (klony: niezmutowane, nieskrzyżowane) i dlaczego.
+Po udanym uruchomieniu polecenia zobaczysz prostą statystykę procesu ewolucji oraz na końcu coś podobnego do
+
+Best individuals:
+(0.8257831463424196,)   <--      /*9*/DDFBRFLUUU
+
+Teraz powiedzmy, że chcemy uruchomić ewolucję 10-krotnie oraz za każdym razem zapisać genotyp z Hall of Fame do osobnego pliku (możesz potem obejrzeć wyewoluowane konstrukcje w GUI Framsticks otwierając te pliki). Modyfikujemy nasze wywołanie - robimy w ulubionym shell'u pętlę, np. pod Windows to może być:
+
+for /L %%N in (1,1,10) do (
+        python ....te-parametry-co-poprzednio.... -hof_savefile HoF-f9-%%N.gen
+)
+
+Pozostaje nam jeszcze główne zadanie - przetestowanie różnych wartości siły mutacji. Żeby na razie nie modyfikować źródła ewolucyjnego w pythonie i załatwić wszystko po stronie shell'a i parametrów linii komend, tworzymy kilka plików z ustawieniami, na przykład plik o nazwie f9-mut-0.sim z zawartością tylko dwóch linijek
+
+sim_params:
+f9_mut:0.0
+
+oraz kolejny plik o nazwie f9-mut-005, gdzie ustawiamy f9_mut na wartość 0.05 (czyli 5% genów będzie mutowanych) i analogicznie dla 10%, 20%, ..., 50% (pamiętaj, żeby pliki .sim umieścić w podkatalogu data/).
+
+Dalej w shell'u dodajemy nadrzędną pętlę, np. pod Windows:
+
+for %%M in (0,005,010,020,inne-pośrednie-wartości,050) do (
+    for /L %%N in (1,1,10) do (
+        python -sim "eval-allcriteria.sim;deterministic.sim;sample-period-2.sim;f9-mut-%%M.sim"  ....to-co-wczesniej.... -hof_savefile HoF-f9-%%M-%%N.gen
+    ))
+
+i to załatwi przetestowanie różnych sił mutacji oraz 10-krotne powtórzenie dla każdej siły. Pozostaje jeszcze przygotowanie wykresów, które umożliwią wygodną prezentację wyników i wyciągnięcie wniosków.
+
+Odpowiedz na pytania, oraz zrób te skrpyty, ale nie w windowskim cmd, tylko w bashu.
