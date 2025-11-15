@@ -1,0 +1,15 @@
+Postarajmy się pomóc ewolucji wyjść z tego trudnego obszaru samodzielnie, tzn. nie podając jej od razu genotypu konstrukcji która już jest wysoka (tak zrobiliśmy na poprzednim laboratorium), ale zmieniając funkcję celu w minimalnym zakresie, jaki jest wymagany, żeby wydostać się z płaskiego obszaru krajobrazu.
+
+Przeanalizuj funkcję frams_evaluate() w pliku FramsticksEvolutionModified.py. W zmiennej default_evaluation_data masz słownik różnych kryteriów oceny genotypu, z którego wybierane są tylko kryteria faktycznie używane w ewolucji (OPTIMIZATION_CRITERIA). Wyświetl zawartość zmiennej default_evaluation_data wewnątrz funkcji frams_evaluate() dla kilku genotypów płaskich (vertpos<=0) i nie-płaskich (vertpos>0) osobników. Czy krajobraz przystosowania dla vertpos<0 jest idealnie płaski (rozwiązania mają dokładnie taką samą ocenę - tzn. całkowity brak gradientu), czy też występują na nim malutkie nierówności?
+
+Wiesz już, czym są "numparts" i "numjoints" w ocenianej konstrukcji. Oprócz tego w słowniku jest "lifespan" (liczba kroków symulacji - zapewne taka sama dla wszystkich ocenianych konstrukcji), "distance" oraz "velocity" (przy czym velocity=distance/lifespan, ale only-body.sim wyłącza budowanie sieci neuronowej, więc zmierzona odległość jest drobnym przypadkowym "błędem pomiaru"). Używając dostępnych w słowniku kryteriów wymyśl, jak zmodyfikować formułę na fitness, żeby w jak najmniejszym obszarze krajobrazu przystosowania zmodyfikować go tak, żeby wyprowadzić ewolucję z plateau tworząc gradient. Wprowadź zmiany oraz powtórz cały eksperyment obliczeniowy, wytwarzając w ten sposób cztery kolejne kategorie na wykresach. Nasza ingerencja powinna być minimalna oraz dobrze uzasadniona:
+- działająca tylko w obszarze plateau i wystarczająca tylko do tego, żeby ewolucja jak najszybciej wydostała się z plateau korzystając z gradientu,
+- nigdy nie modyfikująca jakości rozwiązań z plateau tak, by przewyższały surowe dodatnie wartości vertpos rozwiązań spoza plateau,
+- w miarę możliwości nie wpływająca na charakter wyników w porównaniu do braku ingerencji.
+
+Wygeneruj:
+- trzy rodzaje wykresów z ośmioma kategoriami każdy
+- wyjaśnij dlaczego (przy ewolucji działającej z niezmodyfikowaną funkcją celu) populacja dla niektórych reprezentacji szybciej opuściła plateau, a dla innych potrzebowała większej liczby pokoleń?
+- podaj dokładny, jednoznaczny opis i uzasadnienie swojej modyfikacji funkcji celu,
+- zinterpretuj rezultaty eksperymentu,
+- zastanów się i napisz, jakimi jeszcze metodami można pomóc ewolucji wyjść z plateau. Jedna z nich była użyta poprzednio - zaczęliśmy po prostu ewolucję daleko od plateau, ale to nie jest atrakcyjna metoda, bo wymaga wymyślenia rozwiązania i wprowadza nasz bias
