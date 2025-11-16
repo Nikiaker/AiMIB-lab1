@@ -1,0 +1,17 @@
+Pora na eksperyment ewolucyjny. Wykorzystaj reprezentację f1 i przeprowadź optymalizację prędkości poruszania się wedle następującego schematu:
+
+for %%P in (0) do (
+    for /L %%N in (1,1,10) do (
+        python FramsticksEvolution.py -path %DIR_WITH_FRAMS_LIBRARY%  -sim "eval-allcriteria.sim;deterministic.sim;sample-period-longest.sim;wlasne-prawd-%%P.sim"    -opt velocity   -max_numparts 15   -max_numjoints 30    -max_numneurons 20    -max_numconnections 30   -genformat WYBRANY-0-LUB-1   -pxov 0   -popsize rozmiarconajmniej50    -generations odpowiedniadlugosc   -hof_size 1    -hof_savefile HoF-vel-prawd-%%P-%%N.gen
+    ))
+
+Oczywiście powyższe skrypt jest na windowsa, więc przerób to na skrpyt bashowy wykorzystujący parallel tak jak poprzednio.
+Wyniki powyższego eksperymentu będą stanowiły poziom odniesienia. Pętla nadrzędna z %%P jest na razie nadmiarowa. Na potrzeby tego skryptu specjalnie powstał pusty plik wlasne-prawd-0.sim w podkatalogu data/.
+
+Czy Twoje przewidywania i pomysły na zmianę sposobu, w jaki ewolucja przeszukuje topologię zbioru rozwiązań przyniosły polepszenie ostatecznych wyników?
+
+SUMMARY:
+prawd=0: mean=0.0047 std=0.0042 median=0.0033 min=0.0004 max=0.0128
+prawd=1: mean=0.0044 std=0.0034 median=0.0040 min=0.0003 max=0.0089
+prawd=2: mean=0.0066 std=0.0057 median=0.0038 min=0.0015 max=0.0175
+prawd=3: mean=0.0044 std=0.0046 median=0.0031 min=0.0002 max=0.0168

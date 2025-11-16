@@ -1,0 +1,20 @@
+Jak wiemy, ze względu na różnorodność elementów konstrukcji, które muszą podlegać ewolucji, potrzebujemy różnych operatorów mutacji. Jest to zupełnie odmienne od np. problemu permutacyjnego typu TSP, gdzie mieliśmy ściśle określone, jednorodne, skończone sąsiedztwo. Tutaj mamy wiele sposobów na generowanie sąsiada (mutanta) i każdy z nich ma swoje prawdopodobieństwo wystąpienia.
+
+Teraz zmienimy sposób przeszukiwania topologii zbioru rozwiązań. Został przeprowadzony eksperyment z ustwaieniem wszystkich prawdopodobieństw w pliku wlasne-prawd-1.sim na wartość 1. Wyobraź sobie, jakie ta zmiana powoduje konsekwencje dla ewolucji. Wygeneruj te wykresy, co zwykle. 
+
+
+
+
+
+
+
+
+Czy udało się uzyskać lepsze ostateczne wyniki, czy te wyniki się nie zmieniły, czy też pogorszyły się? O czym to świadczy? Teraz dobierz wartości prawdopodobieństw zgodnie ze swoją intuicją i wiedzą o tym, co robią poszczególne operatory, zapisz je w nowym pliku wlasne-prawd-2.sim, powtórz eksperyment i wygeneruj wykresy.
+
+
+
+
+
+Czy te parametry dały lepsze wyniki?
+Na koniec spróbuj, bazując na swoich przypuszczeniach i dotychczasowym doświadczeniu, zmieniać prawdopodobieństwa operatorów podczas działania ewolucji. Zapewne przewidujesz, że różne operatory mają mniejszą lub większą użyteczność na początku lub na końcu procesu optymalizacji. Podobnie jak wcześniej, po wykonaniu we FramsticksEvolutionModified2.py polecenia import frams masz dostęp do parametrów-obiektów frams.GenMan.f0_p_new, frams.GenMan.f1_smX itd. Możesz bezpiecznie zmieniać ich wartości w trakcie działania ewolucji, na przykład uzależniając ich zmiany od licznika wywołań funkcji frams_evaluate(), od liczby pokoleń, od najlepszej albo średniej wartości fitness w populacji, itp.
+Wygeneruj wykresy i opisz szczegółowo swoje pomysły dotyczące dostosowanych i zmiennych prawdopodobieństw.
