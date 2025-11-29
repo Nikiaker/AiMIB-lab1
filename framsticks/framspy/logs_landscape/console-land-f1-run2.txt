@@ -1,0 +1,171 @@
+Argument values: path=/home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54, lib=None, sim=eval-allcriteria.sim;deterministic.sim;sample-period-2.sim;only-body.sim, genformat=1, initialgenotype=None, opt=vertpos, popsize=50, generations=120, tournament=7, pmut=0.9, pxov=0.0, hof_size=1, hof_savefile=genotypes_landscape/HoF-land-f1-run2.gen, max_numparts=30, max_numjoints=60, max_numneurons=0, max_numconnections=0, max_numgenochars=None, log_file=logs_landscape/log-land-f1-run2.json, stagnation_generations=None, plateau_escape=False
+Using Framsticks version: 5.4
+Home (writable) dir     : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+Resources dir           : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+
+Available objects: ['CheckpointEvent', 'Collision', 'CrCollision', 'Creature', 'CreatureSettings', 'CreatureSignals', 'CreatureSnapshot', 'Dictionary', 'ExpProperties', 'ExpState', 'ExtValue', 'File', 'FunctionReference', 'GenMan', 'GenManStats', 'GenePool', 'GenePools', 'Geno', 'GenoConverters', 'Genotype', 'Interface', 'Joint', 'Loader', 'Math', 'MechJoint', 'MechPart', 'MessageCatcher', 'Model', 'ModelGeometry', 'ModelSymmetry', 'Neuro', 'NeuroClass', 'NeuroClassLibrary', 'NeuroDef', 'NeuroSignals', 'NeuronsSimEnabled', 'ODE', 'Orient', 'Part', 'Population', 'Populations', 'Ref', 'Signal', 'SignalView', 'SimilMeasure', 'SimilMeasureDistribution', 'SimilMeasureGreedy', 'SimilMeasureHungarian', 'Simulator', 'SlaveSimulators', 'StopEvent', 'String', 'UserScripts', 'Vector', 'WireframeAppearance', 'World', 'WorldMap', 'WorldSignals', 'XYZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'c_api', 'ctypes', 'home_dir', 'init', 'os', 're', 'res_dir', 'sim_params', 'stats', 'sys']
+
+Basic tests OK. Using settings: ['eval-allcriteria.sim', 'deterministic.sim', 'sample-period-2.sim', 'only-body.sim']
+
+Simulator.load: Loading from 'eval-allcriteria.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Sample settings for evaluating many criteria of performance of a Framsticks creature.
+Loader.load:  See the "evalcount" parameter if you want to speed the evaluation up or have a more stable result.
+Loader.load:  Other important parameters are "Energy0" and "perfperiod".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded genepool settings, 2 population settings, simulator settings from 'eval-allcriteria.sim'
+Simulator.load: Loading from 'deterministic.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Parameter values that make the evaluation of a Framsticks creature deterministic.
+Loader.load:  The values turn off random noise, so evaluation of the same genotype will always yield the same performance.
+Loader.load:  The advantage is that you do not need to evaluate a genotype many times, and performance values are reliable.
+Loader.load:  The disadvantage is that evolved creatures are "overfitting", i.e. rely entirely on the specific environment,
+Loader.load:  and their behavior may be different in any other environment or (even slightly) changed conditions or parameter values,
+Loader.load:  so each creature evolved using these settings must be later inspected using exactly the same setup.
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded simulator settings from 'deterministic.sim'
+Simulator.load: Loading from 'sample-period-2.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Very low "performance sampling period" in the first population to sample performance very often during lifespan
+Loader.load:  and avoid overlooking some behavior. Averaged performance of sampled values is returned as the final value.
+Loader.load:  See http://www.framsticks.com/a/al_params.html#exper-perfcalc
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded population settings from 'sample-period-2.sim'
+Simulator.load: Loading from 'only-body.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Turns off mutations in f0, f1, f4, fH related to brain (disables adding and modifying neurons)
+Simulator.load: Loaded simulator settings from 'only-body.sim'
+Using mutation rate from frams: 0.0
+gen	nevals	avg  	stddev	min  	max  
+0  	50    	-0.01	0     	-0.01	-0.01
+1  	47    	-0.01	0     	-0.01	-0.01
+2  	47    	-0.01	0     	-0.01	-0.01
+3  	48    	-0.01	0     	-0.01	-0.01
+4  	46    	-0.01	0     	-0.01	-0.01
+5  	44    	-0.01	0     	-0.01	-0.01
+6  	45    	-0.01	0     	-0.01	-0.01
+7  	47    	-0.00880671	0.00835301	-0.01	0.0496643
+8  	47    	-0.00226826	0.0234093 	-0.01	0.109076 
+9  	46    	0.012195   	0.032857  	-0.01	0.109076 
+10 	48    	0.0489497  	0.0422108 	-0.01	0.135488 
+11 	46    	0.0841573  	0.0617515 	-0.01	0.34943  
+12 	41    	0.118058   	0.0801384 	-0.01	0.34943  
+13 	46    	0.151249   	0.107063  	-0.01	0.356894 
+14 	44    	0.231614   	0.123553  	-0.01	0.467716 
+15 	49    	0.218576   	0.145356  	-0.01	0.478094 
+16 	48    	0.243057   	0.158448  	-0.01	0.577606 
+17 	47    	0.267172   	0.168922  	0.0129408	0.577606 
+18 	44    	0.335921   	0.187193  	-0.01    	0.585661 
+19 	46    	0.339033   	0.210903  	-0.01    	0.801512 
+20 	43    	0.401306   	0.205061  	-0.01    	0.809189 
+21 	46    	0.398093   	0.239803  	-0.01    	0.809189 
+22 	45    	0.40929    	0.255567  	0.0521503	0.809189 
+23 	47    	0.451686   	0.288455  	0.0589846	0.812604 
+24 	46    	0.533463   	0.272772  	0.0180462	0.930771 
+25 	47    	0.491783   	0.274248  	0.0553042	0.930771 
+26 	45    	0.510355   	0.285004  	0.0517372	1.01201  
+27 	45    	0.546438   	0.305921  	0.0586902	1.01201  
+28 	46    	0.517445   	0.338358  	0.0180948	1.06189  
+29 	44    	0.563308   	0.341045  	0.0736878	1.06189  
+30 	45    	0.56077    	0.362965  	0.0737232	1.06189  
+31 	44    	0.529731   	0.361574  	0.0730665	1.0697   
+32 	46    	0.533334   	0.327268  	0.037647 	1.0697   
+33 	47    	0.626977   	0.335642  	0.051756 	1.06991  
+34 	46    	0.524305   	0.337131  	0.0517116	1.07198  
+35 	45    	0.572971   	0.355392  	0.0634743	1.07198  
+36 	45    	0.562466   	0.315712  	0.180613 	1.07198  
+37 	42    	0.659776   	0.367203  	0.0302519	1.07198  
+38 	45    	0.630778   	0.347157  	0.0735467	1.08514  
+39 	48    	0.576729   	0.343971  	0.0740546	1.08514  
+40 	44    	0.606518   	0.354581  	0.0732731	1.08514  
+41 	45    	0.587934   	0.366397  	0.0734026	1.10011  
+42 	47    	0.596417   	0.380429  	0.0732731	1.10326  
+43 	44    	0.701218   	0.373435  	0.0717181	1.10326  
+44 	44    	0.687619   	0.363303  	0.0829476	1.11618  
+45 	45    	0.581405   	0.386363  	0.0834274	1.11618  
+46 	45    	0.623679   	0.378339  	0.0405537	1.11618  
+47 	43    	0.650808   	0.388388  	0.0732533	1.1345   
+48 	44    	0.707367   	0.393564  	0.0265377	1.1345   
+49 	43    	0.661089   	0.405611  	0.0732533	1.1345   
+50 	47    	0.663271   	0.403746  	0.0784921	1.1345   
+51 	40    	0.725229   	0.373501  	0.112429 	1.1345   
+52 	48    	0.748473   	0.371384  	0.076913 	1.14165  
+53 	46    	0.778163   	0.372665  	0.112429 	1.14165  
+54 	45    	0.652362   	0.39698   	0.043305 	1.14165  
+55 	46    	0.69999    	0.399572  	0.0764239	1.14645  
+56 	46    	0.739038   	0.382571  	0.0767872	1.14645  
+57 	44    	0.691124   	0.402487  	0.0764841	1.14792  
+58 	43    	0.704142   	0.404771  	0.0770628	1.15393  
+59 	45    	0.728102   	0.400553  	0.0782834	1.15393  
+60 	44    	0.711515   	0.400521  	0.041922 	1.15543  
+61 	43    	0.728728   	0.390631  	0.0782834	1.15543  
+62 	43    	0.735314   	0.412705  	0.0424448	1.17186  
+63 	44    	0.742158   	0.40385   	0.0740282	1.16575  
+64 	46    	0.755734   	0.397556  	0.110561 	1.17131  
+65 	48    	0.684551   	0.416537  	0.040293 	1.17131  
+66 	42    	0.776658   	0.367729  	0.196915 	1.17758  
+67 	45    	0.694467   	0.401589  	0.0763039	1.17758  
+68 	46    	0.737325   	0.433696  	0.0644616	1.17758  
+69 	48    	0.694388   	0.432276  	0.0644616	1.18096  
+70 	46    	0.734922   	0.406295  	0.0764777	1.1822   
+71 	46    	0.728346   	0.412669  	0.063504 	1.18308  
+72 	47    	0.757378   	0.385954  	0.206064 	1.18308  
+73 	45    	0.85748    	0.36956   	0.078102 	1.18579  
+74 	48    	0.67402    	0.413867  	0.0769518	1.18291  
+75 	46    	0.754314   	0.410723  	0.0357827	1.18291  
+76 	48    	0.69367    	0.396618  	0.0768658	1.18298  
+77 	43    	0.73191    	0.424305  	0.0756821	1.20103  
+78 	49    	0.755706   	0.419786  	0.0404367	1.20103  
+79 	48    	0.82931    	0.403236  	0.0762184	1.2014   
+80 	48    	0.789666   	0.377175  	0.078277 	1.20156  
+81 	41    	0.889372   	0.394289  	0.123733 	1.2071   
+82 	44    	0.800475   	0.431183  	0.0676491	1.2071   
+83 	46    	0.859807   	0.439965  	0.0782408	1.2184   
+84 	43    	0.888988   	0.376349  	0.0908319	1.2184   
+85 	46    	0.710455   	0.435434  	0.0782284	1.2184   
+86 	43    	0.788103   	0.403154  	0.089981 	1.2184   
+87 	48    	0.743791   	0.445794  	0.0694459	1.22066  
+88 	44    	0.855573   	0.397367  	0.0788111	1.22066  
+89 	45    	0.851344   	0.433022  	0.0631101	1.22244  
+90 	43    	0.854069   	0.401898  	0.0766615	1.22244  
+91 	43    	0.795128   	0.399633  	0.205603 	1.22244  
+92 	48    	0.819365   	0.446819  	0.0410324	1.22244  
+93 	45    	0.868858   	0.386611  	0.0381863	1.22244  
+94 	45    	0.808515   	0.451256  	0.0381863	1.22263  
+95 	45    	0.800701   	0.408124  	0.0410324	1.22263  
+96 	42    	0.88292    	0.395305  	0.0410428	1.22295  
+97 	42    	0.875906   	0.408622  	0.0796396	1.22741  
+98 	45    	0.889017   	0.394643  	0.079044 	1.22741  
+99 	49    	0.874546   	0.402501  	0.079044 	1.22741  
+100	47    	0.89006    	0.391855  	0.180015 	1.22741  
+101	46    	0.812913   	0.430965  	0.0789177	1.22772  
+102	47    	0.819593   	0.430603  	0.0795569	1.22772  
+103	44    	0.844233   	0.433298  	0.0789136	1.22772  
+104	43    	0.900783   	0.425343  	0.0790218	1.22772  
+105	42    	0.920822   	0.388899  	0.0895483	1.22953  
+106	47    	0.852688   	0.406259  	0.0439327	1.22953  
+107	42    	0.795538   	0.449468  	0.0697649	1.22953  
+108	41    	0.831087   	0.426762  	0.0789713	1.22953  
+109	43    	0.858436   	0.43077   	0.0789177	1.23011  
+110	41    	0.817917   	0.429273  	0.0383967	1.23011  
+111	45    	0.854753   	0.415141  	0.078996 	1.23011  
+112	46    	0.85401    	0.413021  	0.0930481	1.23052  
+113	46    	0.88635    	0.432351  	0.0936686	1.23058  
+114	45    	0.82307    	0.423438  	0.0785104	1.23058  
+115	47    	0.888005   	0.39221   	0.127439 	1.23058  
+116	45    	0.852696   	0.429675  	0.0785104	1.23104  
+117	47    	0.836062   	0.433836  	0.0597913	1.2315   
+118	41    	0.908243   	0.379921  	0.0597913	1.23179  
+119	44    	0.792689   	0.387914  	0.094938 	1.2315   
+120	47    	0.871356   	0.407744  	0.0784422	1.2315   
+Best individuals:
+(1.2317859597403376,) 	<--	 LmLLfmLqfXLfLmLFLL(Mm(L(LFLMXCfXLqFLLXLFLLLCQXMQmmQfX)), FLQfLqX)
+Saved 'genotypes_landscape/HoF-land-f1-run2.gen' (1)
+Log saved to logs_landscape/log-land-f1-run2.json
+Elapsed time: 5363.81 seconds
+VMNeuronManager.autoload: Neuro classes added: S1 PIDV PIDP Thr SeeLight2 Nn Light SeeLight Delay S0 
+UserScripts.autoload: 20 user scripts added.

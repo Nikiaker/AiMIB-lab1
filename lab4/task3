@@ -1,0 +1,6 @@
+Na zakończenie przeprowadzimy jeszcze jedna analizę ujawniającą pewną cechę krajobrazu (i zarazem operatorów mutacji). Wybierz około 20 rozwiązań (od najlepszych znalezionych do najgorszych, o najniższym fitness) i dla każdego z nich wykonaj sekwencję np. 30-tu mutacji ("losowy spacer" - to ma być sekwencja!), oceniając każdego mutanta. Jeśli któryś mutant wypadnie niepoprawny (jego pseudo-ocena wyniesie FITNESS_VALUE_INFEASIBLE_SOLUTION), powtarzaj daną mutację do skutku (aż powstanie poprawny mutant).
+
+Następnie narysuj zwykłe wykresy liniowe (na osi poziomej - numer mutanta w sekwencji zaczynając od oryginalnej próbki, na osi pionowej - wartości fitnessów). Dobierz kolory zależnie od jakości rozwiązań początkowych (na przykład 4 różne kolory dla grup po 5 rozwiązań: najlepsze 5 rozwiązań - 5 zielonych linii, kolejne 5 - niebieskie, kolejne 5 - pomarańczowe, najgorsze 5 - czerwone). Celem jest zobaczenie, jak na różnych poziomach fitnessu układają się losowe ścieżki wytworzone przez sukcesywne mutacje [dyskusja na zajęciach, rozwiązanie jako "pamięć"].
+
+Zamieść wykresy, opisz jak je skonstruowałeś/aś i zinterpretuj uzyskane wyniki w kontekście krajobrazów przystosowania.
+
