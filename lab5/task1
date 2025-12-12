@@ -1,0 +1,50 @@
+Jak definiowana jest epistaza i jak można ją oszacować empirycznie?
+
+Wybierz jedną z reprezentacji genetycznych: f9
+
+Tak jak poprzednio, wyewoluuj kilka wysokich konstrukcji (kryterium "vertpos") używając parametrów eval-allcriteria.sim;deterministic.sim;sample-period-2.sim;only-body.sim. Z uzyskanych konstrukcji wybierz kilka różniących się (co najmniej trzy). Możesz też dołączyć jeden prosty, ręcznie zbudowany genotyp, jeśli chcesz zobaczyć, jak działa wyznaczanie epistazy dla łatwego do analizy, własnego pomysłu rozwiązania.
+
+Zwizualizuj epistazę (macierz 2D) pomiędzy wszystkimi parami genów. Jeśli wyłączenie genu skutkuje niepoprawnym genotypem, zignoruj ​​ten gen w analizie (nie wyłączaj go). Możesz wykorzystać poniższy kod jako inspirację:
+
+import argparse
+import numpy as np
+import os,sys
+from FramsticksLib import FramsticksLib
+
+
+def setstr(s, pos, char):
+	assert len(char) == 1
+	assert 0 <= pos < len(s)
+	return s[:pos] + char + s[pos + 1:]
+
+def show_array(arr):
+	import matplotlib.pyplot as plt
+	import matplotlib.colors as colors
+	fig, ax = plt.subplots(figsize=(5, 5))
+	from  matplotlib.colors import LinearSegmentedColormap
+	red_white_green=LinearSegmentedColormap.from_list('my-gradient',["r", "w", "g"], N=256) # because matplotlib only provides red-YELLOW-green 
+	im = ax.imshow(arr, cmap=red_white_green, norm=colors.CenteredNorm())
+	# ...
+
+def evaluate(prefix, geno): # TODO if needed, handle errors (due to invalid genotypes)
+	return framsLib.evaluate([prefix + geno])[0]['evaluations']['']['vertpos']
+
+
+
+# parsed_args = parseArguments()
+# framsLib = FramsticksLib(parsed_args.path, parsed_args.lib, parsed_args.simsettings)
+
+g = 'UDDDLFR...' # the genotype to test
+prefix = '/*9*/'
+fit = evaluate(prefix, g)
+print(fit)
+arr = np.full([len(g), len(g)], np.nan)
+for i in range(len(g)):
+	for j in range(len(g)): # the diagonal (i==j) stores the effect of disabling a single gene
+		g2 = g
+		g2 = setstr(g2, i, ' ')
+		g2 = setstr(g2, j, ' ')
+		g2 = g2.replace(' ', '')
+		arr[i][j] = evaluate(prefix,g2) - fit
+
+# calculate epistasis...

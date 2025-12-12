@@ -12,6 +12,7 @@ pkgs.mkShell {
     python3Packages.deap
     python3Packages.matplotlib
     python3Packages.seaborn
+    python3Packages.plotly
   ];
 
   shellHook = ''
