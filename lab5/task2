@@ -4,3 +4,8 @@ Zwizualizuj wyniki jako "3D heatmap" (małe kulki ułożone w siatkę 3D, pokolo
 
 
 Przeanalizuj wyniki i opisz wnioski tak jak wcześniej. Dla wszystkich punktów odniesienia i przetestowanych genotypów porównaj sumę surowych wartości epistazy (tzn. sum(epistasis_3d_matrix)) i sumę wartości bezwzględnych (tzn. sum(abs(epistasis_3d_matrix))). Który z dwóch punktów odniesienia okazał się bardziej użyteczny (zakładając, że teraz chcemy odkryć nowe informacje dotyczące interakcji między trójkami genów, a nie te same informacje, które już znamy o parach) i dlaczego?
+
+
+E1(i) = f(g - {i}) - C (efekt pojedynczego genu)
+E2(i,j) = f(g - {i,j}) - C - E1(i) - E1(j)
+E3(i,j,k) = f(g - {i,j,k}) - C - [E1(i)+E1(j)+E1(k)] - [E2(i,j)+E2(i,k)+E2(j,k)] (czysta epistaza trójkowa po odjęciu wkładów 1. i 2. rzędu)
