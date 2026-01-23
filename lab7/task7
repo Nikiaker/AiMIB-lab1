@@ -1,0 +1,72 @@
+W tym ćwiczeniu sam(a) wybierasz, jaki będzie cel optymalizacji. Będziesz miał(a) dostęp do współrzędnych środka ciężkości konstrukcji oraz do współrzędnych wszystkich jej części (Parts) w każdym kroku jej symulacji. Na podstawie tych informacji Twoim zadaniem jest zdefiniowanie funkcji celu, która poprowadzi ewolucję do celu, który określisz.
+
+Aby do funkcji frams_evaluate() w pythonie trafiło nagranie współrzędnych symulowanej struktury, użyj recording-body-coords.sim (tzn. podaj ten plik jako ostatni na oddzielanej średnikami liście plików w argumencie -sim). Zajrzyj do wnętrza recording-body-coords.sim i przeczytaj komentarz u góry tego pliku - możesz ograniczyć ilość gromadzonych i przesyłanych danych żeby nie zapisywać tego, czego i tak nie potrzebujesz, co przyspieszy obliczenia. W funkcji frams_evaluate(), w słowniku default_evaluation_data będziesz miał klucz o nazwie data->bodyrecording - jego wartością jest lista list (wyświetl ją sobie) zgodnie ze specyfikacją opisaną w pliku recording-body-coords.sim. Na podstawie tych danych zdefiniuj wedle swojego pomysłu fitness tak, żeby pomóc ewolucji osiągnąć wyznaczony przez Ciebie cel.
+
+Możesz modyfikować wiele elementów symulacji w miarę potrzeb:
+- kształt podłoża i poziom wody (klasa World) oraz siłę grawitacji,
+- czas symulacji konstrukcji (Energy0) - w przypadku ewolucji kształtu wystarczy jeden krok,
+- miejsce jej początkowego umieszczenia (zmiany w standard-eval.expdef, funkcja onBorn() i standard_placement.inc),
+- występowanie (lub nie) okresu stabilizacji,
+- własny sensor lub efektor (nowy plik *.neuro w katalogu data/scripts).
+
+Do przeprowadzenia eksperymentów powstał nowy plik o nazwie eval-allcriteria-mini.sim. Użyj tego pliku zamiast eval-allcriteria.sim w swojej sekwencji plików .sim.
+
+W odpowiedzi zamieść:
+- Celem ewolucji w eksperymencie symulacyjnym jest ... (tu opis celu).
+- Jeśli cel dotyczy wyewoluowania zachowania, przemyśl i opisz dwie kwestie:
+    - Warunki początkowe (lokalizacja i orientacja w świecie; środowisko): stałe/zmienne. Jak to wpłynie na wynik ewolucji? ("overfitting").
+    - Czy agent będzie wiedział gdzie jest i co robi, czy nie? (zmysły=sensory). Innymi słowy, czy ewolucja może wyczuć/odkryć związek zachowania z funkcją celu i w ten sposób stworzyć aktywne sterowanie w organizmie, czy też "ślepy" agent będzie się zawsze zachowywał niezależnie od warunków otoczenia i od własnego stanu?
+- Użyta sekwencja plików .sim.
+- Lista zmienionych (w stosunku do domyślnych) wartości parametrów i fragmentów skryptów. Wykorzystane kryterium stopu (może być np. oparte na liczbie ocenionych osobników, wartości fitness, stagnacji fitness, itp.) - ważne jest osiągnięcie zbieżności.
+- Przykładowe warianty eksperymentu do porównania: kolejne ulepszenia definicji fitness, różne wartości parametrów (wagi w funkcji celu, rozmiar populacji, reprezentacja genetyczna f0/f1/f4/fH). Każdy wariant poddawaj 10-krotnemu powtórzeniu.
+- Porównaj co najmniej dwa warianty.
+- Wykresy - takie jak na wcześniejszych laboratoriach (każdy wariant to osobna kategoria na wykresach).
+- Charakterystyka krajobrazu przystosowania - całościowo oraz w otoczeniu miejsca, gdzie ewolucja się zaczyna. Nie trzeba tu robić specjalnego eksperymentu obliczeniowego, wystarczy przemyśleć i opisać jak krajobraz wygląda.
+- Wnioski ilościowe (z przebiegów ewolucji i wykresów pudełkowych).
+- Wnioski jakościowe: jak zachowują się najlepsze osobniki? czy mają jakieś szczególne genotypy? czy wyniki są zgodne z oczekiwaniami? jeśli nie, dlaczego? jeśli wyewoluowane osobniki ruszają się lub specyficznie zachowują - zamiast umieszczać serię screenshotów w odpowiedzi, lepiej nagraj filmik (który może też pokazywać działanie ich sieci neuronowej)
+
+Oto konwersacja z prowadzącym na mój temat eksperymentu:
+Szanowny Panie Doktorze,
+mam pomysł co do funkcji celu na lab 7 z AiMIB i piszę z pytaniem czy ten pomysł będzie w porządku.
+Otóż pomysł jest podobny do podanego przykładu z "wyskokiem z progu", z tym że w mojej wersji nie było by progu.
+
+Stick na początku stoi/leży na płaskim podłożu, a jego zadaniem jest wykonać jak najdalszy skok.
+Żeby dokładniej zdefiniować funkcję celu to chodzi o to żeby zmierzyć odległość od punktu startowego przed wyskokiem
+do miejsca lądowania i tą odległość chcę maksymalizować.
+Za punkt startowy uznałbym moment, kiedy każdy part przestanie dotykać podłoża - wtedy stick jest "w powietrzu".
+Za lądowanie uznałbym moment, kiedy jakikolwiek part dotknie podłoża.
+Zarówno punkt startowy jak i końcowy będzie odnosił się do środka ciężkości tego sticka - czyli tak naprawdę będę mierzył
+jak daleko udało się stickowi przenieść środek ciężkości od wyskoku do lądowania.
+W obliczaniu odległości będę pomijał wysokość środka ciężkości (więc mierzę odległość tylko na osi XZ)
+
+Czy taki pomysł jest w porządku i czy Pan Doktor ma jakieś uwagi lub dodatkowe spostrzeżenia do tego problemu?
+
+Odpowiedź od prowadzącego:
+Dzień dobry,
+
+Przykładowy "wyskok z progu", żeby działał tak spektakularnie jak ten na
+filmie, wymaga jakiegoś zmysłu informującego o odległości od progu (żeby
+wyskok czyli sterowanie sieci neuronowej było "świadome"), chociaż można
+też polegać na "przeuczeniu" (skoro skocznia zawsze wygląda tak samo i
+startujemy zawsze z tego samego miejsca...).
+
+Pomysł, który Pan opisuje, jest OK! Czyli chodzi o pojedynczy, jak
+najdalszy skok. Jak rozumiem, rozważamy dowolne konstrukcje (nie tylko
+pojedynczy stick, co sugeruje Pana opis).
+
+Moja odpowiedź:
+Szanowny Panie Doktorze,
+Tak oczywiście chodzi o różne konstrukcje.
+Jak pisałem stick to chodziło mi o konstrukcję, a jak pisałem part to chodziło mi o pojedynczą część.
+
+Odpowiedź od prowadzącego:
+Tak, tak się domyślałem. Czyli w tym przypadku potrzebuje Pan informacji
+co krok symulacji o wszystkich Partach, więc jest to ten przypadek
+gdzie do Pythona trafia "dużo informacji".
+
+Czyli będzie Pan używał eval-allcriteria-mini.sim, deterministic.sim,
+recording-body-coords.sim.
+
+Gdyby 10000 kroków symulacji na ocenę zachowania każdego agenta to było
+za dużo, może Pan tę wartość zmniejszyć - odpowiada za to linijka
+Energy0:10000.0.

@@ -1,0 +1,393 @@
+Argument values: path=/home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54, lib=None, sim=eval-allcriteria-mini.sim;deterministic.sim;recording-body-coords.sim;only-body.sim, genformat=0, initialgenotype=None, opt=jumpdistance, popsize=60, generations=300, tournament=7, pmut=0.9, pxov=0.0, hof_size=1, hof_savefile=genotypes_jump/HoF-jump-f0-eps002-center-run3.gen, max_numparts=20, max_numjoints=40, max_numneurons=0, max_numconnections=0, max_numgenochars=None, log_file=logs_jump/log-jump-f0-eps002-center-run3.json, stagnation_generations=None, plateau_escape=False, eps=0.02, placement=center
+Using Framsticks version: 5.4
+Home (writable) dir     : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+Resources dir           : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+
+Available objects: ['CheckpointEvent', 'Collision', 'CrCollision', 'Creature', 'CreatureSettings', 'CreatureSignals', 'CreatureSnapshot', 'Dictionary', 'ExpProperties', 'ExpState', 'ExtValue', 'File', 'FunctionReference', 'GenMan', 'GenManStats', 'GenePool', 'GenePools', 'Geno', 'GenoConverters', 'Genotype', 'Interface', 'Joint', 'Loader', 'Math', 'MechJoint', 'MechPart', 'MessageCatcher', 'Model', 'ModelGeometry', 'ModelSymmetry', 'Neuro', 'NeuroClass', 'NeuroClassLibrary', 'NeuroDef', 'NeuroSignals', 'NeuronsSimEnabled', 'ODE', 'Orient', 'Part', 'Population', 'Populations', 'Ref', 'Signal', 'SignalView', 'SimilMeasure', 'SimilMeasureDistribution', 'SimilMeasureGreedy', 'SimilMeasureHungarian', 'Simulator', 'SlaveSimulators', 'StopEvent', 'String', 'UserScripts', 'Vector', 'WireframeAppearance', 'World', 'WorldMap', 'WorldSignals', 'XYZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'c_api', 'ctypes', 'home_dir', 'init', 'os', 're', 'res_dir', 'sim_params', 'stats', 'sys']
+
+Basic tests OK. Using settings: ['eval-allcriteria-mini.sim', 'deterministic.sim', 'recording-body-coords.sim', 'only-body.sim']
+
+Simulator.load: Loading from 'eval-allcriteria-mini.sim'
+Simulator.load: Loaded simulator settings from 'eval-allcriteria-mini.sim'
+Simulator.load: Loading from 'deterministic.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Parameter values that make the evaluation of a Framsticks creature deterministic.
+Loader.load:  The values turn off random noise, so evaluation of the same genotype will always yield the same performance.
+Loader.load:  The advantage is that you do not need to evaluate a genotype many times, and performance values are reliable.
+Loader.load:  The disadvantage is that evolved creatures are "overfitting", i.e. rely entirely on the specific environment,
+Loader.load:  and their behavior may be different in any other environment or (even slightly) changed conditions or parameter values,
+Loader.load:  so each creature evolved using these settings must be later inspected using exactly the same setup.
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded simulator settings from 'deterministic.sim'
+Simulator.load: Loading from 'recording-body-coords.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  The recording of the "center of gravity" (or mass) of all Parts of a creature during its lifespan, and
+Loader.load:  the recording of coordinates of all Parts are stored as data->bodyrecording.
+Loader.load:  Use STORE_ALL_PART_COORDS below to decide how much data you need recorded - maybe only COG and no Parts.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=0 below, only COG is stored and the format is
+Loader.load:  [ [cog1x,cog1y,cog1z], [cog2x,cog2y,cog2z], [cog3x,cog3y,cog3z], ...]
+Loader.load:  where index numbers in the names are simulation steps.
+Loader.load:  So you get a vector of COG x,y,z coordinates repeated for every simulation step.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=1 below, the format is more verbose with one more level of nesting, because after the COG,
+Loader.load:  the list of coordinates of all Parts follows (the first index in the names below is the simulation step, the second one is Part number)
+Loader.load:  [ [[cog1x,cog1y,cog1z], [p1_1x,p1_1y,p1_1z], [p1_2x,p1_2y,p1_2z], ...], ...]
+Loader.load: 
+Loader.load:  You can further limit the amount of stored data by recording coordinates less frequently - see onCreaturesStep() comment below.
+Loader.load:  Adjust 'Energy0' to achieve the lifespan you need.
+Loader.load:  'evalcount' should likely be 1 unless you need other performance criteria (like vertpos or distance) averaged from multiple evaluations.
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution unless you prefer to provide its path when loading.
+Simulator.load: Loaded simulator settings from 'recording-body-coords.sim'
+Simulator.load: Loading from 'only-body.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Turns off mutations in f0, f1, f4, fH related to brain (disables adding and modifying neurons)
+Simulator.load: Loaded simulator settings from 'only-body.sim'
+Using mutation rate from frams: 0.0
+gen	nevals	avg	stddev	min	max
+0  	60    	0  	0     	0  	0  
+1  	55    	0  	0     	0  	0  
+2  	58    	0  	0     	0  	0  
+3  	51    	0  	0     	0  	0  
+4  	50    	0  	0     	0  	0  
+5  	57    	0  	0     	0  	0  
+6  	55    	0  	0     	0  	0  
+7  	56    	0  	0     	0  	0  
+8  	50    	0  	0     	0  	0  
+9  	53    	0  	0     	0  	0  
+10 	54    	0  	0     	0  	0  
+11 	54    	0  	0     	0  	0  
+12 	55    	0  	0     	0  	0  
+13 	51    	0  	0     	0  	0  
+14 	53    	0  	0     	0  	0  
+15 	57    	0  	0     	0  	0  
+16 	55    	0  	0     	0  	0  
+17 	55    	0  	0     	0  	0  
+18 	52    	0  	0     	0  	0  
+19 	50    	0  	0     	0  	0  
+20 	47    	0  	0     	0  	0  
+21 	54    	0  	0     	0  	0  
+22 	54    	0  	0     	0  	0  
+23 	54    	0  	0     	0  	0  
+24 	57    	0  	0     	0  	0  
+25 	57    	0  	0     	0  	0  
+26 	55    	0  	0     	0  	0  
+27 	51    	0  	0     	0  	0  
+28 	47    	0  	0     	0  	0  
+29 	56    	0  	0     	0  	0  
+30 	58    	0  	0     	0  	0  
+31 	58    	0  	0     	0  	0  
+32 	57    	0  	0     	0  	0  
+33 	56    	0  	0     	0  	0  
+34 	56    	0  	0     	0  	0  
+35 	56    	0  	0     	0  	0  
+36 	55    	0  	0     	0  	0  
+37 	49    	0  	0     	0  	0  
+38 	54    	0  	0     	0  	0  
+39 	52    	0  	0     	0  	0  
+40 	55    	0  	0     	0  	0  
+41 	57    	0  	0     	0  	0  
+42 	54    	0  	0     	0  	0  
+43 	54    	0  	0     	0  	0  
+44 	57    	0  	0     	0  	0  
+45 	53    	0  	0     	0  	0  
+46 	50    	0  	0     	0  	0  
+47 	58    	0  	0     	0  	0  
+48 	53    	0  	0     	0  	0  
+49 	59    	0  	0     	0  	0  
+50 	58    	0  	0     	0  	0  
+51 	53    	0  	0     	0  	0  
+52 	50    	0  	0     	0  	0  
+53 	54    	0  	0     	0  	0  
+54 	52    	0  	0     	0  	0  
+55 	55    	0  	0     	0  	0  
+56 	55    	0.000101401	0.000778877	0  	0.00608407
+57 	55    	0          	0          	0  	0         
+58 	57    	0          	0          	0  	0         
+59 	56    	0          	0          	0  	0         
+60 	55    	0          	0          	0  	0         
+61 	52    	0          	0          	0  	0         
+62 	52    	0          	0          	0  	0         
+63 	57    	0          	0          	0  	0         
+64 	52    	0          	0          	0  	0         
+65 	59    	0          	0          	0  	0         
+66 	55    	0          	0          	0  	0         
+67 	54    	0          	0          	0  	0         
+68 	56    	0          	0          	0  	0         
+69 	54    	0          	0          	0  	0         
+70 	58    	0          	0          	0  	0         
+71 	54    	0          	0          	0  	0         
+72 	52    	0          	0          	0  	0         
+73 	57    	0          	0          	0  	0         
+74 	53    	0          	0          	0  	0         
+75 	52    	0          	0          	0  	0         
+76 	55    	0          	0          	0  	0         
+77 	54    	0          	0          	0  	0         
+78 	54    	0          	0          	0  	0         
+79 	57    	0          	0          	0  	0         
+80 	54    	0          	0          	0  	0         
+81 	55    	0          	0          	0  	0         
+82 	52    	0          	0          	0  	0         
+83 	55    	0          	0          	0  	0         
+84 	53    	0          	0          	0  	0         
+85 	54    	0          	0          	0  	0         
+86 	54    	0          	0          	0  	0         
+87 	54    	0          	0          	0  	0         
+88 	55    	0          	0          	0  	0         
+89 	57    	0          	0          	0  	0         
+90 	57    	0          	0          	0  	0         
+91 	52    	0          	0          	0  	0         
+92 	53    	0          	0          	0  	0         
+93 	48    	0          	0          	0  	0         
+94 	55    	0          	0          	0  	0         
+95 	54    	0          	0          	0  	0         
+96 	56    	0          	0          	0  	0         
+97 	54    	0          	0          	0  	0         
+98 	54    	0          	0          	0  	0         
+99 	55    	0          	0          	0  	0         
+100	58    	0          	0          	0  	0         
+101	56    	0          	0          	0  	0         
+102	58    	0          	0          	0  	0         
+103	55    	0          	0          	0  	0         
+104	54    	0          	0          	0  	0         
+105	56    	0          	0          	0  	0         
+106	55    	0          	0          	0  	0         
+107	50    	0          	0          	0  	0         
+108	57    	0          	0          	0  	0         
+109	59    	0          	0          	0  	0         
+110	55    	0          	0          	0  	0         
+111	55    	0          	0          	0  	0         
+112	54    	0          	0          	0  	0         
+113	54    	0          	0          	0  	0         
+114	55    	0          	0          	0  	0         
+115	54    	0          	0          	0  	0         
+116	53    	0          	0          	0  	0         
+117	48    	0          	0          	0  	0         
+118	53    	0          	0          	0  	0         
+119	56    	0          	0          	0  	0         
+120	58    	0          	0          	0  	0         
+121	55    	6.60263e-05	0.000507158	0  	0.00396158
+122	56    	0.000198067	0.000863352	0  	0.00396158
+123	53    	0.00030618 	0.00106977 	0  	0.00499986
+124	53    	0.000404663	0.00122587 	0  	0.00499986
+125	48    	0.000734004	0.001587   	0  	0.00499986
+126	53    	0.000631709	0.00152946 	0  	0.00499986
+127	51    	0.000820999	0.00161878 	0  	0.00500002
+128	55    	0.000745883	0.00142496 	0  	0.00500002
+129	51    	0.00103658 	0.00176942 	0  	0.00500002
+130	58    	0.000393366	0.00110789 	0  	0.00499986
+131	57    	0.000235877	0.000802051	0  	0.00427687
+132	52    	0.000294156	0.000921692	0  	0.00427687
+133	52    	0.000514362	0.00122837 	0  	0.00483247
+134	55    	0.00039422 	0.00105926 	0  	0.00427687
+135	47    	0.000753899	0.00143888 	0  	0.00483247
+136	51    	0.000686836	0.00141431 	0  	0.00483247
+137	51    	0.000719004	0.00167701 	0  	0.00703602
+138	54    	0.000491058	0.00134843 	0  	0.00703602
+139	56    	0.000661208	0.00162173 	0  	0.00703602
+140	53    	0.000772636	0.00183201 	0  	0.00723214
+141	52    	0.000818851	0.00177982 	0  	0.0070388 
+142	49    	0.0011347  	0.00197329 	0  	0.0070388 
+143	53    	0.000978971	0.00212955 	0  	0.00722362
+144	54    	0.000618461	0.0017164  	0  	0.00722362
+145	55    	0.000628679	0.00182073 	0  	0.00722362
+146	55    	0.000762193	0.00183865 	0  	0.00722362
+147	54    	0.000684406	0.00176887 	0  	0.00722362
+148	51    	0.000773567	0.0019355  	0  	0.00703829
+149	54    	0.0008677  	0.00203074 	0  	0.00703829
+150	53    	0.00102497 	0.00212314 	0  	0.00703829
+151	54    	0.000924558	0.00194128 	0  	0.00791478
+152	56    	0.000969539	0.00222733 	0  	0.00791806
+153	56    	0.000447974	0.00156353 	0  	0.00791806
+154	52    	0.000266171	0.00108046 	0  	0.00791806
+155	56    	0.000262321	0.000939689	0  	0.00637963
+156	57    	0.000520636	0.00134685 	0  	0.00638201
+157	55    	0.000556031	0.00139619 	0  	0.00637963
+158	54    	0.000627087	0.00144106 	0  	0.00637963
+159	58    	0.000521217	0.00153176 	0  	0.00637963
+160	56    	0.000479828	0.00146232 	0  	0.00637963
+161	59    	6.80679e-05	0.000288069	0  	0.00169534
+162	53    	8.44233e-05	0.000605187	0  	0.00472057
+163	50    	0.000130494	0.000567755	0  	0.00341041
+164	55    	0.000169181	0.000610142	0  	0.00341067
+165	57    	0.000205383	0.000683048	0  	0.00341041
+166	51    	0.000298494	0.000816092	0  	0.00345853
+167	56    	0.000339825	0.000892715	0  	0.00345853
+168	54    	0.00058425 	0.00105229 	0  	0.00345853
+169	58    	0.000451961	0.000953956	0  	0.00306577
+170	58    	0.000473682	0.00101692 	0  	0.00377955
+171	57    	0.000531932	0.0011091  	0  	0.00405704
+172	55    	0.000441487	0.00100548 	0  	0.00367029
+173	56    	0.000270672	0.000809871	0  	0.00367029
+174	55    	0.000344599	0.000894312	0  	0.00329404
+175	51    	0.000505189	0.00108492 	0  	0.00383842
+176	51    	0.00065808 	0.00123308 	0  	0.00439046
+177	53    	0.000635271	0.00128577 	0  	0.00439046
+178	55    	0.000489785	0.00117479 	0  	0.00439107
+179	52    	0.000746916	0.00150529 	0  	0.00704453
+180	56    	0.000654178	0.00161116 	0  	0.00704453
+181	56    	0.000600866	0.00154118 	0  	0.00704453
+182	56    	0.000635385	0.00178082 	0  	0.00704453
+183	58    	0.000578267	0.00149852 	0  	0.00706048
+184	51    	0.00101926 	0.00183859 	0  	0.00706048
+185	53    	0.000809549	0.00166901 	0  	0.00712322
+186	52    	0.000890937	0.00178609 	0  	0.00712322
+187	50    	0.00103083 	0.00192352 	0  	0.00712322
+188	51    	0.00076203 	0.00169272 	0  	0.00706048
+189	50    	0.000724667	0.00149251 	0  	0.00505104
+190	52    	0.000717154	0.00147875 	0  	0.00505104
+191	56    	0.000609142	0.00135035 	0  	0.00505104
+192	58    	0.000326011	0.00102439 	0  	0.00459776
+193	57    	0.000648885	0.00137224 	0  	0.0049019 
+194	55    	0.000752102	0.00136196 	0  	0.00459776
+195	53    	0.000621097	0.00124802 	0  	0.00458693
+196	53    	0.000840585	0.00140819 	0  	0.00519906
+197	58    	0.000636294	0.00151423 	0  	0.00719296
+198	55    	0.000662509	0.00142033 	0  	0.00651129
+199	49    	0.00117976 	0.00156286 	0  	0.00428634
+200	53    	0.00102046 	0.00190524 	0  	0.00896812
+201	53    	0.000902411	0.0016314  	0  	0.00448572
+202	51    	0.00092324 	0.00162161 	0  	0.00619971
+203	51    	0.00127223 	0.00210895 	0  	0.00625051
+204	55    	0.000770328	0.00181468 	0  	0.00695027
+205	58    	0.000487111	0.00148685 	0  	0.00781887
+206	57    	0.000490881	0.00174173 	0  	0.00781887
+207	57    	0.000365166	0.00127417 	0  	0.00725012
+208	53    	0.000656858	0.00152105 	0  	0.00725012
+209	51    	0.00115657 	0.00199314 	0  	0.00725012
+210	56    	0.000752307	0.00177847 	0  	0.00721043
+211	53    	0.0012577  	0.00260146 	0  	0.0124516 
+212	55    	0.00111949 	0.00217385 	0  	0.00874127
+213	55    	0.000855987	0.00181089 	0  	0.00721201
+214	56    	0.00103755 	0.00229618 	0  	0.00840167
+215	57    	0.000994187	0.00223112 	0  	0.00976521
+216	53    	0.00084022 	0.00182782 	0  	0.00739907
+217	55    	0.00112313 	0.00231956 	0  	0.00967332
+218	55    	0.000653013	0.00164512 	0  	0.00889534
+219	55    	0.00103767 	0.00228075 	0  	0.00994812
+220	59    	0.000927787	0.00223537 	0  	0.0115612 
+221	55    	0.0012378  	0.00264258 	0  	0.00964021
+222	58    	0.00139293 	0.00297501 	0  	0.0111936 
+223	53    	0.00125509 	0.00268116 	0  	0.00964021
+224	55    	0.000945035	0.00232515 	0  	0.0095365 
+225	54    	0.0017658  	0.00304797 	0  	0.0105662 
+226	52    	0.00143143 	0.00271161 	0  	0.00973602
+227	56    	0.00137553 	0.00246135 	0  	0.0098303 
+228	52    	0.0020279  	0.00340346 	0  	0.0119604 
+229	55    	0.00130937 	0.00314736 	0  	0.0119604 
+230	53    	0.00155513 	0.00325462 	0  	0.0119604 
+231	49    	0.00274893 	0.00452323 	0  	0.0119604 
+232	54    	0.00174486 	0.00343023 	0  	0.0119604 
+233	59    	0.00114637 	0.00304748 	0  	0.0119689 
+234	54    	0.0020833  	0.00390751 	0  	0.0119816 
+235	54    	0.00297483 	0.00459137 	0  	0.0121556 
+236	54    	0.00224907 	0.00421634 	0  	0.0121795 
+237	53    	0.00269974 	0.00438149 	0  	0.0121795 
+238	57    	0.00125765 	0.00321573 	0  	0.012132  
+239	55    	0.00152145 	0.00345346 	0  	0.0121317 
+240	54    	0.00222214 	0.00406211 	0  	0.0121317 
+241	57    	0.00181216 	0.00376011 	0  	0.0123162 
+242	57    	0.00136305 	0.00310224 	0  	0.0120254 
+243	58    	0.000922887	0.00242926 	0  	0.0114348 
+244	54    	0.0017384  	0.00341958 	0  	0.0122752 
+Selection: ignoring 2 infeasible solutions in a population of size 60
+245	56    	0.00102696 	0.00264594 	0  	0.0122752 
+246	54    	0.00120137 	0.00283486 	0  	0.0122752 
+247	58    	0.00139919 	0.00310365 	0  	0.0122752 
+248	56    	0.00159744 	0.00341764 	0  	0.012292  
+249	57    	0.0015044  	0.00335768 	0  	0.012292  
+250	53    	0.00155382 	0.00342046 	0  	0.0119314 
+251	52    	0.00151642 	0.0034447  	0  	0.0119782 
+252	51    	0.00173776 	0.00348764 	0  	0.0119782 
+253	51    	0.00225939 	0.00400503 	0  	0.0125817 
+254	59    	0.00118808 	0.00270756 	0  	0.0120348 
+255	52    	0.00124551 	0.00312004 	0  	0.0120348 
+256	54    	0.00204639 	0.00407875 	0  	0.0120348 
+257	55    	0.00174279 	0.00365016 	0  	0.0120348 
+258	54    	0.000941004	0.00267434 	0  	0.0120348 
+259	55    	0.00105835 	0.00279638 	0  	0.0119457 
+260	54    	0.00167149 	0.00336342 	0  	0.0119409 
+261	57    	0.00157907 	0.00321771 	0  	0.0119409 
+262	54    	0.00137562 	0.00306712 	0  	0.0118211 
+263	53    	0.00172191 	0.00375201 	0  	0.0118211 
+264	56    	0.00178023 	0.00383862 	0  	0.0119627 
+265	55    	0.00126132 	0.00318584 	0  	0.0124027 
+266	57    	0.000574906	0.00213921 	0  	0.0109684 
+267	54    	5.32351e-05	0.000408907	0  	0.00319411
+268	53    	0.000179484	0.00069382 	0  	0.00319919
+269	55    	0.000200826	0.000818406	0  	0.00494169
+270	56    	0.000304856	0.000815449	0  	0.00319411
+Selection: ignoring 1 infeasible solution in a population of size 60
+271	54    	0.00105531 	0.00247026 	0  	0.0114409 
+272	58    	0.000578453	0.00166823 	0  	0.0113758 
+273	54    	0.00130381 	0.00289808 	0  	0.0113758 
+274	56    	0.000965425	0.00244107 	0  	0.0113758 
+275	57    	0.000827072	0.00190893 	0  	0.00930695
+276	57    	0.00110073 	0.00239673 	0  	0.00904268
+277	50    	0.00115505 	0.0024076  	0  	0.00904268
+278	54    	0.00125766 	0.00236063 	0  	0.0090891 
+279	59    	0.00100876 	0.00260668 	0  	0.0105159 
+280	52    	0.00115319 	0.00261092 	0  	0.00908528
+281	55    	0.00102158 	0.00245506 	0  	0.00908596
+282	52    	0.00119004 	0.00268102 	0  	0.00908596
+283	56    	0.000768378	0.00229052 	0  	0.00908596
+284	56    	0.000770469	0.00237179 	0  	0.0101518 
+285	54    	0.00126153 	0.00275387 	0  	0.0101518 
+286	54    	0.00146077 	0.00308495 	0  	0.0101518 
+287	52    	0.000645799	0.00215008 	0  	0.0101518 
+288	52    	0.00113392 	0.00262136 	0  	0.0111608 
+289	54    	0.00103459 	0.00266378 	0  	0.0121082 
+290	49    	0.00124662 	0.00278373 	0  	0.0121082 
+291	55    	0.000870898	0.00234026 	0  	0.0121082 
+292	53    	0.00117598 	0.00283183 	0  	0.0121082 
+293	51    	0.00107414 	0.00256935 	0  	0.0121082 
+294	56    	0.000862985	0.00208841 	0  	0.00731577
+295	50    	0.00118184 	0.00230678 	0  	0.0072073 
+296	53    	0.00112772 	0.00225298 	0  	0.0073592 
+297	55    	0.00140105 	0.00254487 	0  	0.00765244
+298	55    	0.000782986	0.00217176 	0  	0.00765244
+299	52    	0.000705261	0.001877   	0  	0.0072653 
+300	53    	0.000970787	0.00224867 	0  	0.0072653 
+Best individuals:
+(0.012581693561648673,) 	<--	 //0
+p:2.86, -4.615, -1.679, fr=0.578, vr=0.468, 0.78, 0.326
+p:4.573, -4.161, -1.898, fr=0.628, vr=0.614, 0.839, 0.127
+p:4.622, -4.205, -2.107, fr=0.773, vr=0.63, 0.965, 0.151
+p:5.04, -4.195, -2.787, fr=0.888, vr=0.607, 0.734, 0.027
+p:4.558608980881101, -4.324578200630356, -2.693683570637154, fr=1.499, vr=0.562, 0.696, 0.039
+p:5.317, -4.092, -3.292, fr=0.074, vr=0.485, 0.654, 0.01
+p:3.107032995462563, -4.561217704746626, -1.4427620900619367, fr=0.332, vr=0.469, 0.696, 0.228
+p:4.112, -4.207, -2.651, fr=1.041, vr=0.558, 0.936, 0.174
+p:3.887, -3.734, -1.706, vr=0.486, 0.981, 0.045
+p:4.225, -4.138, -1.931, fr=0.669, vr=0.703, 0.917, 0.002
+p:4.099, -4.389, -1.943, vr=0.696, 0.762, 0.125
+p:3.722, -4.095, -2.462, fr=0.385, vr=0.478, 0.833, 0.084
+p:2.665, -4.719, -1.345, fr=0.261, vr=0.396, 0.742, 0.425
+p:3.321, -4.485, -2.175, fr=0.598, vr=0.67, 0.825, 0.034
+p:2.815, -4.878, -1.907, fr=0.212, vr=0.612, 0.829, 0.116
+j:1, 0, vr=0.541, 0.8095, 0.2265
+j:2, 1, vr=0.622, 0.9019999999999999, 0.139
+j:4, 3, vr=0.5845, 0.715, 0.033
+j:2, 0, vr=0.549, 0.8725, 0.2385
+j:5, 4, vr=0.5235000000000001, 0.675, 0.0245
+j:0, 4, vr=0.515, 0.738, 0.1825
+j:6, 0, vr=0.4685, 0.738, 0.277
+j:7, 2, vr=0.5940000000000001, 0.9505, 0.16249999999999998
+j:11, 7, vr=0.522, 0.9585, 0.10949999999999999
+j:9, 2, vr=0.6665, 0.9410000000000001, 0.0765
+j:9, 1, vr=0.6585, 0.878, 0.0645
+j:10, 1, vr=0.655, 0.8005, 0.126
+j:0, 10, vr=0.582, 0.771, 0.2255
+j:8, 7, vr=0.518, 0.8845000000000001, 0.129
+j:12, 0, vr=0.43200000000000005, 0.761, 0.3755
+j:13, 9, vr=0.78, 0.977, 0.019
+j:14, 13, vr=0.641, 0.827, 0.07500000000000001
+j:12, 6, vr=0.4325, 0.719, 0.3265
+
+Saved 'genotypes_jump/HoF-jump-f0-eps002-center-run3.gen' (1)
+Log saved to logs_jump/log-jump-f0-eps002-center-run3.json
+Elapsed time: 10622.83 seconds
+VMNeuronManager.autoload: Neuro classes added: S1 PIDV PIDP Thr SeeLight2 Nn Light SeeLight Delay S0 
+UserScripts.autoload: 20 user scripts added.

@@ -1,0 +1,499 @@
+Argument values: path=/home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54, lib=None, sim=eval-allcriteria-mini.sim;deterministic.sim;recording-body-coords.sim;only-body.sim, genformat=0, initialgenotype=None, opt=jumpdistance, popsize=60, generations=300, tournament=7, pmut=0.9, pxov=0.0, hof_size=1, hof_savefile=genotypes_jump/HoF-jump-f0-eps002-center-run9.gen, max_numparts=20, max_numjoints=40, max_numneurons=0, max_numconnections=0, max_numgenochars=None, log_file=logs_jump/log-jump-f0-eps002-center-run9.json, stagnation_generations=None, plateau_escape=False, eps=0.02, placement=center
+Using Framsticks version: 5.4
+Home (writable) dir     : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+Resources dir           : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+
+Available objects: ['CheckpointEvent', 'Collision', 'CrCollision', 'Creature', 'CreatureSettings', 'CreatureSignals', 'CreatureSnapshot', 'Dictionary', 'ExpProperties', 'ExpState', 'ExtValue', 'File', 'FunctionReference', 'GenMan', 'GenManStats', 'GenePool', 'GenePools', 'Geno', 'GenoConverters', 'Genotype', 'Interface', 'Joint', 'Loader', 'Math', 'MechJoint', 'MechPart', 'MessageCatcher', 'Model', 'ModelGeometry', 'ModelSymmetry', 'Neuro', 'NeuroClass', 'NeuroClassLibrary', 'NeuroDef', 'NeuroSignals', 'NeuronsSimEnabled', 'ODE', 'Orient', 'Part', 'Population', 'Populations', 'Ref', 'Signal', 'SignalView', 'SimilMeasure', 'SimilMeasureDistribution', 'SimilMeasureGreedy', 'SimilMeasureHungarian', 'Simulator', 'SlaveSimulators', 'StopEvent', 'String', 'UserScripts', 'Vector', 'WireframeAppearance', 'World', 'WorldMap', 'WorldSignals', 'XYZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'c_api', 'ctypes', 'home_dir', 'init', 'os', 're', 'res_dir', 'sim_params', 'stats', 'sys']
+
+Basic tests OK. Using settings: ['eval-allcriteria-mini.sim', 'deterministic.sim', 'recording-body-coords.sim', 'only-body.sim']
+
+Simulator.load: Loading from 'eval-allcriteria-mini.sim'
+Simulator.load: Loaded simulator settings from 'eval-allcriteria-mini.sim'
+Simulator.load: Loading from 'deterministic.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Parameter values that make the evaluation of a Framsticks creature deterministic.
+Loader.load:  The values turn off random noise, so evaluation of the same genotype will always yield the same performance.
+Loader.load:  The advantage is that you do not need to evaluate a genotype many times, and performance values are reliable.
+Loader.load:  The disadvantage is that evolved creatures are "overfitting", i.e. rely entirely on the specific environment,
+Loader.load:  and their behavior may be different in any other environment or (even slightly) changed conditions or parameter values,
+Loader.load:  so each creature evolved using these settings must be later inspected using exactly the same setup.
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded simulator settings from 'deterministic.sim'
+Simulator.load: Loading from 'recording-body-coords.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  The recording of the "center of gravity" (or mass) of all Parts of a creature during its lifespan, and
+Loader.load:  the recording of coordinates of all Parts are stored as data->bodyrecording.
+Loader.load:  Use STORE_ALL_PART_COORDS below to decide how much data you need recorded - maybe only COG and no Parts.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=0 below, only COG is stored and the format is
+Loader.load:  [ [cog1x,cog1y,cog1z], [cog2x,cog2y,cog2z], [cog3x,cog3y,cog3z], ...]
+Loader.load:  where index numbers in the names are simulation steps.
+Loader.load:  So you get a vector of COG x,y,z coordinates repeated for every simulation step.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=1 below, the format is more verbose with one more level of nesting, because after the COG,
+Loader.load:  the list of coordinates of all Parts follows (the first index in the names below is the simulation step, the second one is Part number)
+Loader.load:  [ [[cog1x,cog1y,cog1z], [p1_1x,p1_1y,p1_1z], [p1_2x,p1_2y,p1_2z], ...], ...]
+Loader.load: 
+Loader.load:  You can further limit the amount of stored data by recording coordinates less frequently - see onCreaturesStep() comment below.
+Loader.load:  Adjust 'Energy0' to achieve the lifespan you need.
+Loader.load:  'evalcount' should likely be 1 unless you need other performance criteria (like vertpos or distance) averaged from multiple evaluations.
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution unless you prefer to provide its path when loading.
+Simulator.load: Loaded simulator settings from 'recording-body-coords.sim'
+Simulator.load: Loading from 'only-body.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Turns off mutations in f0, f1, f4, fH related to brain (disables adding and modifying neurons)
+Simulator.load: Loaded simulator settings from 'only-body.sim'
+Using mutation rate from frams: 0.0
+gen	nevals	avg	stddev	min	max
+0  	60    	0  	0     	0  	0  
+1  	55    	0  	0     	0  	0  
+2  	55    	0  	0     	0  	0  
+3  	56    	0  	0     	0  	0  
+4  	52    	0  	0     	0  	0  
+5  	53    	0  	0     	0  	0  
+6  	59    	0  	0     	0  	0  
+7  	55    	0  	0     	0  	0  
+8  	56    	0  	0     	0  	0  
+9  	54    	0  	0     	0  	0  
+10 	52    	0  	0     	0  	0  
+11 	54    	0  	0     	0  	0  
+12 	52    	0  	0     	0  	0  
+13 	55    	0  	0     	0  	0  
+14 	49    	0  	0     	0  	0  
+15 	55    	0  	0     	0  	0  
+16 	55    	0  	0     	0  	0  
+17 	57    	0  	0     	0  	0  
+18 	57    	0  	0     	0  	0  
+19 	52    	0  	0     	0  	0  
+20 	50    	0  	0     	0  	0  
+21 	53    	0  	0     	0  	0  
+22 	53    	0  	0     	0  	0  
+23 	53    	0  	0     	0  	0  
+24 	53    	0  	0     	0  	0  
+25 	52    	0  	0     	0  	0  
+26 	55    	0  	0     	0  	0  
+27 	55    	0  	0     	0  	0  
+28 	51    	0  	0     	0  	0  
+29 	54    	0  	0     	0  	0  
+30 	53    	0  	0     	0  	0  
+31 	53    	0  	0     	0  	0  
+32 	54    	0  	0     	0  	0  
+33 	58    	0  	0     	0  	0  
+34 	53    	0  	0     	0  	0  
+35 	54    	0  	0     	0  	0  
+36 	56    	0  	0     	0  	0  
+37 	53    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+38 	57    	0  	0     	0  	0  
+39 	55    	0  	0     	0  	0  
+40 	56    	0  	0     	0  	0  
+41 	52    	0  	0     	0  	0  
+42 	56    	0  	0     	0  	0  
+43 	50    	0  	0     	0  	0  
+44 	50    	0  	0     	0  	0  
+45 	52    	0  	0     	0  	0  
+46 	55    	0  	0     	0  	0  
+47 	52    	0  	0     	0  	0  
+48 	55    	0  	0     	0  	0  
+49 	53    	0  	0     	0  	0  
+50 	51    	0  	0     	0  	0  
+51 	58    	0  	0     	0  	0  
+52 	56    	0  	0     	0  	0  
+53 	49    	0  	0     	0  	0  
+54 	52    	0  	0     	0  	0  
+55 	59    	0  	0     	0  	0  
+56 	57    	0  	0     	0  	0  
+57 	55    	0  	0     	0  	0  
+58 	55    	0  	0     	0  	0  
+59 	54    	0  	0     	0  	0  
+60 	54    	0  	0     	0  	0  
+61 	54    	0  	0     	0  	0  
+62 	56    	0  	0     	0  	0  
+63 	50    	0  	0     	0  	0  
+64 	54    	0  	0     	0  	0  
+65 	51    	0  	0     	0  	0  
+66 	51    	0  	0     	0  	0  
+67 	56    	0  	0     	0  	0  
+68 	54    	0  	0     	0  	0  
+69 	54    	0  	0     	0  	0  
+70 	55    	0  	0     	0  	0  
+71 	58    	2.75958e-05	0.000211968	0  	0.00165575
+72 	54    	2.75958e-05	0.000211968	0  	0.00165575
+73 	55    	0          	0          	0  	0         
+74 	53    	0          	0          	0  	0         
+75 	56    	0          	0          	0  	0         
+76 	54    	0          	0          	0  	0         
+77 	55    	0          	0          	0  	0         
+78 	57    	0          	0          	0  	0         
+79 	56    	0          	0          	0  	0         
+80 	56    	0          	0          	0  	0         
+81 	57    	0          	0          	0  	0         
+82 	55    	0          	0          	0  	0         
+83 	53    	0          	0          	0  	0         
+84 	55    	0          	0          	0  	0         
+85 	52    	0          	0          	0  	0         
+86 	55    	0          	0          	0  	0         
+87 	52    	0          	0          	0  	0         
+88 	58    	0          	0          	0  	0         
+89 	54    	0          	0          	0  	0         
+90 	55    	0          	0          	0  	0         
+91 	56    	0          	0          	0  	0         
+92 	56    	0          	0          	0  	0         
+93 	56    	0          	0          	0  	0         
+94 	51    	0          	0          	0  	0         
+95 	51    	0          	0          	0  	0         
+96 	48    	0          	0          	0  	0         
+97 	54    	0          	0          	0  	0         
+98 	55    	0          	0          	0  	0         
+99 	57    	0          	0          	0  	0         
+Selection: ignoring 1 infeasible solution in a population of size 60
+100	53    	0          	0          	0  	0         
+101	53    	0          	0          	0  	0         
+102	52    	0          	0          	0  	0         
+Selection: ignoring 1 infeasible solution in a population of size 60
+103	57    	0          	0          	0  	0         
+104	57    	1.05185e-05	8.07944e-05	0  	0.000631112
+105	52    	4.0932e-05 	0.000180279	0  	0.00100807 
+Selection: ignoring 1 infeasible solution in a population of size 60
+106	52    	4.59743e-05	0.000172756	0  	0.000775804
+107	52    	5.84253e-05	0.000200333	0  	0.000996003
+108	51    	5.39883e-05	0.000209497	0  	0.000996003
+109	55    	8.70279e-05	0.000273833	0  	0.00133263 
+110	54    	0.000135888	0.000410865	0  	0.00256561 
+111	56    	0.000170391	0.000530991	0  	0.00274816 
+112	53    	0.000117988	0.000384823	0  	0.00256561 
+113	55    	0.000134556	0.000489713	0  	0.00256561 
+114	55    	0.000238258	0.000667118	0  	0.00277066 
+115	53    	0.000191755	0.000559975	0  	0.00277066 
+116	53    	0.000174468	0.000539134	0  	0.00277066 
+117	55    	0.00011078 	0.000350123	0  	0.00147554 
+118	50    	0.000101773	0.000316359	0  	0.00147554 
+119	55    	0.000149523	0.000531914	0  	0.00237907 
+120	53    	0.00021294 	0.00058052 	0  	0.00237907 
+121	54    	6.13033e-05	0.000319471	0  	0.00225307 
+122	53    	0.000138502	0.000457909	0  	0.00225307 
+123	54    	0.000238218	0.000614026	0  	0.00225307 
+124	55    	0.000199701	0.000601666	0  	0.00225307 
+125	54    	0.000235184	0.000654715	0  	0.00225307 
+126	57    	0.000244873	0.000625419	0  	0.00225307 
+127	53    	0.000294095	0.000686697	0  	0.00225363 
+128	51    	0.00024797 	0.000614913	0  	0.00225307 
+129	54    	0.000245059	0.000604622	0  	0.00218687 
+130	52    	0.000209742	0.000602598	0  	0.00218687 
+131	57    	0.000130398	0.000488641	0  	0.00205844 
+132	50    	0.000135299	0.000478202	0  	0.00205844 
+133	52    	0.000134838	0.000470492	0  	0.00205844 
+134	55    	0.000134933	0.000455407	0  	0.00205005 
+135	55    	0.00012624 	0.000478064	0  	0.00293447 
+136	55    	0.000230037	0.00136559 	0  	0.0105191  
+137	53    	0.000270536	0.00138076 	0  	0.0105191  
+138	52    	0.000456204	0.00191294 	0  	0.0105191  
+139	49    	0.000547791	0.00229067 	0  	0.0105191  
+140	54    	0.000544492	0.00229092 	0  	0.0105191  
+141	54    	0.000668813	0.00235199 	0  	0.0105191  
+142	57    	0.000284352	0.00145332 	0  	0.0105191  
+143	57    	3.3891e-05 	0.000260322	0  	0.00203346 
+144	51    	0.000113375	0.000449567	0  	0.00203346 
+145	55    	0.000106837	0.000580219	0  	0.00428582 
+146	53    	0.000154529	0.000772224	0  	0.00428582 
+147	55    	0.000152827	0.000763172	0  	0.00428385 
+148	51    	0.000476109	0.00134877 	0  	0.00524669 
+149	54    	0.00024099 	0.000863068	0  	0.00431286 
+150	56    	0.000211617	0.000841456	0  	0.00431286 
+151	54    	0.000351041	0.00116453 	0  	0.00431286 
+152	54    	0.000565566	0.00144221 	0  	0.00431286 
+153	55    	0.000283372	0.00106068 	0  	0.00432122 
+154	56    	0.000230248	0.00100787 	0  	0.00518917 
+155	51    	0.000388615	0.00129484 	0  	0.00518917 
+156	55    	0.000406052	0.00135145 	0  	0.00518917 
+157	52    	0.000380272	0.00126547 	0  	0.00518917 
+158	56    	0.000259725	0.000944686	0  	0.00522368 
+159	55    	0.000321047	0.00116597 	0  	0.00572867 
+160	51    	0.000347082	0.00137553 	0  	0.00884622 
+161	56    	0.000412446	0.00164011 	0  	0.00884622 
+162	54    	0.000576243	0.00193154 	0  	0.00884622 
+163	54    	0.000391878	0.00132732 	0  	0.00884622 
+164	56    	0.000579425	0.00165148 	0  	0.0101268  
+165	57    	0.000400812	0.00125246 	0  	0.0067891  
+166	57    	0.000137707	0.000564353	0  	0.00334078 
+167	53    	0.000156956	0.00059116 	0  	0.00334078 
+168	54    	0.000302745	0.000917963	0  	0.00391787 
+169	53    	0.000348337	0.000981065	0  	0.00364332 
+170	54    	0.00036543 	0.00101084 	0  	0.00364332 
+171	50    	0.000449023	0.00112655 	0  	0.00364332 
+172	57    	0.000191886	0.000843494	0  	0.00450252 
+173	52    	0.000381178	0.00115897 	0  	0.00450252 
+174	56    	0.000766929	0.00159791 	0  	0.00548078 
+175	58    	0.000400509	0.00106494 	0  	0.00512013 
+176	56    	0.000369881	0.00120455 	0  	0.00510189 
+177	53    	0.000378885	0.00112386 	0  	0.00523216 
+178	57    	0.000339457	0.00101019 	0  	0.00448263 
+179	51    	0.000409273	0.00109231 	0  	0.00439703 
+180	53    	0.000267744	0.000794363	0  	0.0033203  
+181	52    	0.000469185	0.0010923  	0  	0.00452656 
+182	57    	0.000350654	0.00105354 	0  	0.00452559 
+183	50    	0.00076755 	0.00175886 	0  	0.00798711 
+184	53    	0.000576486	0.00173335 	0  	0.00953215 
+185	55    	0.000262717	0.000915073	0  	0.00462194 
+186	55    	0.000240892	0.000774879	0  	0.00447541 
+187	53    	0.000367815	0.00131597 	0  	0.0086489  
+188	53    	0.000549591	0.00140141 	0  	0.00742761 
+189	54    	0.00033163 	0.00105381 	0  	0.00627949 
+190	56    	0.000292189	0.00138827 	0  	0.0103241  
+191	51    	0.000425673	0.00143499 	0  	0.0103241  
+192	51    	0.000699676	0.00193285 	0  	0.0103243  
+193	55    	0.000249368	0.000599776	0  	0.00239273 
+194	55    	0.000267681	0.000756965	0  	0.00416096 
+195	49    	0.000315365	0.000815533	0  	0.00416096 
+196	52    	0.000192919	0.000578837	0  	0.00239273 
+197	55    	6.94361e-05	0.000343608	0  	0.00239273 
+198	56    	0.000176201	0.000575543	0  	0.00244312 
+Selection: ignoring 1 infeasible solution in a population of size 60
+199	49    	0.000169052	0.000518548	0  	0.00239273 
+200	51    	0.000260704	0.000843776	0  	0.00535617 
+201	55    	0.000345651	0.00118393 	0  	0.00535617 
+202	56    	0.000311882	0.00101383 	0  	0.00535653 
+203	53    	0.000714435	0.0018341  	0  	0.00716881 
+204	52    	0.000781445	0.00193114 	0  	0.00717936 
+205	56    	0.000381113	0.00144329 	0  	0.00717936 
+206	54    	0.000171759	0.000773381	0  	0.00466148 
+207	52    	0.000249451	0.000963094	0  	0.00466148 
+208	54    	0.000205847	0.000910603	0  	0.00466148 
+Selection: ignoring 1 infeasible solution in a population of size 60
+209	56    	3.79091e-05	0.000286208	0  	0.00219873 
+Selection: ignoring 2 infeasible solutions in a population of size 60
+210	53    	0.000113054	0.00044202 	0  	0.00219873 
+Selection: ignoring 2 infeasible solutions in a population of size 60
+211	51    	0.000113721	0.000443499	0  	0.00219873 
+Selection: ignoring 1 infeasible solution in a population of size 60
+212	56    	0.000259342	0.00086236 	0  	0.00405037 
+Selection: ignoring 1 infeasible solution in a population of size 60
+213	53    	0.000361428	0.00123489 	0  	0.00584122 
+Selection: ignoring 1 infeasible solution in a population of size 60
+214	53    	0.00056145 	0.00154259 	0  	0.00584122 
+Selection: ignoring 3 infeasible solutions in a population of size 60
+215	52    	0.000730159	0.00168698 	0  	0.00584122 
+216	55    	0.000990007	0.00198494 	0  	0.00602711 
+Selection: ignoring 2 infeasible solutions in a population of size 60
+217	55    	0.000941023	0.00192908 	0  	0.00643339 
+Selection: ignoring 2 infeasible solutions in a population of size 60
+218	58    	0.000819466	0.00189207 	0  	0.00685624 
+Selection: ignoring 1 infeasible solution in a population of size 60
+219	53    	0.00101133 	0.00231276 	0  	0.00886672 
+Selection: ignoring 5 infeasible solutions in a population of size 60
+220	55    	0.00132461 	0.00256957 	0  	0.00886672 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+221	56    	0.00141873 	0.00268449 	0  	0.00886672 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+222	54    	0.00130385 	0.00261216 	0  	0.00821918 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+223	57    	0.00133668 	0.00270345 	0  	0.00821918 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+224	51    	0.00163277 	0.00302263 	0  	0.0083399  
+Selection: ignoring 13 infeasible solutions in a population of size 60
+225	53    	0.00247033 	0.00364731 	0  	0.00852225 
+Selection: ignoring 20 infeasible solutions in a population of size 60
+226	57    	0.00124053 	0.0028314  	0  	0.00852225 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+227	50    	0.00157641 	0.0030528  	0  	0.0087965  
+Selection: ignoring 9 infeasible solutions in a population of size 60
+228	53    	0.00155181 	0.00319581 	0  	0.0087965  
+Selection: ignoring 11 infeasible solutions in a population of size 60
+229	57    	0.00050835 	0.00192627 	0  	0.008095   
+Selection: ignoring 14 infeasible solutions in a population of size 60
+230	56    	0.000507025	0.00172821 	0  	0.00811775 
+Selection: ignoring 10 infeasible solutions in a population of size 60
+231	56    	0.000824271	0.00222288 	0  	0.00860549 
+Selection: ignoring 16 infeasible solutions in a population of size 60
+232	51    	0.000791983	0.00211591 	0  	0.00809157 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+233	54    	0.00134474 	0.00291975 	0  	0.00809157 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+234	55    	0.000999636	0.00268237 	0  	0.00933548 
+Selection: ignoring 11 infeasible solutions in a population of size 60
+235	52    	0.00139784 	0.00308543 	0  	0.0099719  
+Selection: ignoring 13 infeasible solutions in a population of size 60
+236	55    	0.00120048 	0.0029192  	0  	0.0100529  
+Selection: ignoring 12 infeasible solutions in a population of size 60
+237	54    	0.00190044 	0.0035617  	0  	0.0111565  
+Selection: ignoring 11 infeasible solutions in a population of size 60
+238	58    	0.00182798 	0.00334176 	0  	0.00981147 
+Selection: ignoring 14 infeasible solutions in a population of size 60
+239	55    	0.00201241 	0.00345986 	0  	0.00873338 
+Selection: ignoring 13 infeasible solutions in a population of size 60
+240	57    	0.00132387 	0.00294551 	0  	0.00875184 
+Selection: ignoring 16 infeasible solutions in a population of size 60
+241	56    	0.000993798	0.00257688 	0  	0.00875184 
+Selection: ignoring 11 infeasible solutions in a population of size 60
+242	51    	0.0017605  	0.00335716 	0  	0.00875184 
+Selection: ignoring 16 infeasible solutions in a population of size 60
+243	56    	0.00216477 	0.00344333 	0  	0.00875184 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+244	52    	0.00157529 	0.00313082 	0  	0.00875184 
+Selection: ignoring 15 infeasible solutions in a population of size 60
+245	58    	0.00179154 	0.00349817 	0  	0.00936899 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+246	57    	0.00148989 	0.00318454 	0  	0.00890762 
+Selection: ignoring 14 infeasible solutions in a population of size 60
+247	50    	0.00193644 	0.00346348 	0  	0.00924596 
+Selection: ignoring 10 infeasible solutions in a population of size 60
+248	55    	0.001891   	0.00353534 	0  	0.00934789 
+Selection: ignoring 13 infeasible solutions in a population of size 60
+249	52    	0.00192533 	0.0036764  	0  	0.0113408  
+Selection: ignoring 10 infeasible solutions in a population of size 60
+250	50    	0.00274802 	0.00428705 	0  	0.0113408  
+Selection: ignoring 9 infeasible solutions in a population of size 60
+251	54    	0.00254961 	0.00403936 	0  	0.0113408  
+Selection: ignoring 12 infeasible solutions in a population of size 60
+252	57    	0.00207591 	0.00363957 	0  	0.0113408  
+Selection: ignoring 6 infeasible solutions in a population of size 60
+253	52    	0.00117879 	0.00271406 	0  	0.00951369 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+254	56    	0.00106223 	0.00248332 	0  	0.00951369 
+Selection: ignoring 3 infeasible solutions in a population of size 60
+255	55    	0.00169464 	0.00318372 	0  	0.00951369 
+Selection: ignoring 3 infeasible solutions in a population of size 60
+256	56    	0.00176028 	0.00335277 	0  	0.00951369 
+Selection: ignoring 16 infeasible solutions in a population of size 60
+257	55    	0.0010728  	0.00282054 	0  	0.00951369 
+Selection: ignoring 7 infeasible solutions in a population of size 60
+258	53    	0.000820558	0.00255524 	0  	0.00951369 
+Selection: ignoring 8 infeasible solutions in a population of size 60
+259	53    	0.00105334 	0.00282691 	0  	0.00951369 
+Selection: ignoring 12 infeasible solutions in a population of size 60
+260	56    	0.000806632	0.00248954 	0  	0.00934308 
+Selection: ignoring 8 infeasible solutions in a population of size 60
+261	56    	0.000680686	0.00216308 	0  	0.00868977 
+Selection: ignoring 7 infeasible solutions in a population of size 60
+262	56    	0.000629661	0.00213969 	0  	0.00868977 
+Selection: ignoring 10 infeasible solutions in a population of size 60
+263	52    	0.00104538 	0.00259358 	0  	0.00868977 
+Selection: ignoring 5 infeasible solutions in a population of size 60
+264	53    	0.0020771  	0.00333042 	0  	0.00871111 
+Selection: ignoring 4 infeasible solutions in a population of size 60
+265	55    	0.00144755 	0.0029837  	0  	0.00871111 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+266	56    	0.00118026 	0.00283608 	0  	0.00871111 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+267	54    	0.00106243 	0.00265912 	0  	0.00871111 
+Selection: ignoring 4 infeasible solutions in a population of size 60
+268	53    	0.00148974 	0.00305477 	0  	0.00891068 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+269	56    	0.00110779 	0.00283697 	0  	0.00938394 
+Selection: ignoring 8 infeasible solutions in a population of size 60
+270	55    	0.00192078 	0.00366269 	0  	0.00984407 
+Selection: ignoring 14 infeasible solutions in a population of size 60
+271	53    	0.00254408 	0.0039096  	0  	0.00949939 
+Selection: ignoring 14 infeasible solutions in a population of size 60
+272	57    	0.00119464 	0.00283014 	0  	0.00949939 
+Selection: ignoring 10 infeasible solutions in a population of size 60
+273	49    	0.00241956 	0.00357881 	0  	0.00949939 
+Selection: ignoring 9 infeasible solutions in a population of size 60
+274	54    	0.00152659 	0.00326591 	0  	0.0106883  
+Selection: ignoring 11 infeasible solutions in a population of size 60
+275	55    	0.00228837 	0.0039049  	0  	0.0117428  
+Selection: ignoring 13 infeasible solutions in a population of size 60
+276	54    	0.00246718 	0.00432412 	0  	0.0117422  
+Selection: ignoring 9 infeasible solutions in a population of size 60
+277	58    	0.000743252	0.00254646 	0  	0.0117379  
+Selection: ignoring 13 infeasible solutions in a population of size 60
+278	52    	0.00162578 	0.00389654 	0  	0.0119107  
+Selection: ignoring 7 infeasible solutions in a population of size 60
+279	50    	0.00321552 	0.00494074 	0  	0.0119458  
+Selection: ignoring 7 infeasible solutions in a population of size 60
+280	52    	0.00354823 	0.00510178 	0  	0.0119458  
+Selection: ignoring 12 infeasible solutions in a population of size 60
+281	56    	0.00278638 	0.00462224 	0  	0.0125292  
+Selection: ignoring 12 infeasible solutions in a population of size 60
+282	55    	0.00242797 	0.00447256 	0  	0.0125291  
+Selection: ignoring 8 infeasible solutions in a population of size 60
+283	60    	0.0011906  	0.00330192 	0  	0.0120152  
+Selection: ignoring 9 infeasible solutions in a population of size 60
+284	56    	0.000497115	0.00225424 	0  	0.012016   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+285	55    	0.00049388 	0.00218101 	0  	0.012016   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+286	53    	0.00045359 	0.00172967 	0  	0.0118388  
+Selection: ignoring 2 infeasible solutions in a population of size 60
+287	55    	0.000435938	0.00136344 	0  	0.00604705 
+Selection: ignoring 3 infeasible solutions in a population of size 60
+288	51    	0.000852307	0.00181301 	0  	0.00604705 
+Selection: ignoring 11 infeasible solutions in a population of size 60
+289	56    	0.000516359	0.00142743 	0  	0.00604705 
+Selection: ignoring 8 infeasible solutions in a population of size 60
+290	54    	0.000272541	0.000541101	0  	0.00211388 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+291	54    	0.000259756	0.000559051	0  	0.00211388 
+Selection: ignoring 9 infeasible solutions in a population of size 60
+292	51    	0.000248959	0.000535471	0  	0.00211388 
+Selection: ignoring 11 infeasible solutions in a population of size 60
+293	49    	0.000629928	0.00124359 	0  	0.00672666 
+Selection: ignoring 5 infeasible solutions in a population of size 60
+294	57    	0.000567024	0.00117141 	0  	0.00672666 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+295	54    	0.000606767	0.00117764 	0  	0.00672666 
+Selection: ignoring 6 infeasible solutions in a population of size 60
+296	53    	0.000730597	0.0013355  	0  	0.00672666 
+Selection: ignoring 4 infeasible solutions in a population of size 60
+297	56    	0.000472596	0.000896736	0  	0.00290999 
+Selection: ignoring 7 infeasible solutions in a population of size 60
+298	54    	0.00032346 	0.000839689	0  	0.00290999 
+Selection: ignoring 3 infeasible solutions in a population of size 60
+299	51    	0.000623655	0.00110873 	0  	0.00291028 
+Selection: ignoring 4 infeasible solutions in a population of size 60
+300	54    	0.000368064	0.000940792	0  	0.00291    
+Best individuals:
+(0.012529247088236812,) 	<--	 //0
+p:-1.3346342422465094, 0.6774465909883961, 1.7165936430657465, fr=1.573, vr=0.058, 0.493, 0.092
+p:-0.554, -0.139, 1.452, fr=0.424, vr=0.538, 0.572, 0.253
+p:-0.701, -0.294, 1.394, fr=2.126, vr=0.367, 0.699, 0.298
+p:-0.568, 0.318, 1.774, fr=0.597, vr=0.485, 0.715, 0.34
+p:-0.22990918743130218, -0.6789602797910511, 0.7476029340463849, vr=0.468, 0.541, 0.14
+p:-1.07, 0.104, 1.385, vr=0.427, 0.595, 0.192
+p:0.088, -1.263, 0.419, fr=0.058, vr=0.081, 0.456, 0.295
+p:-1.09, -0.272, 0.746, fr=0.422, vr=0.248, 0.74, 0.37
+p:-0.639, -1.074, 1.369, fr=1.144, vr=0.252, 0.834, 0.314
+p:-1.282, -1.744, 1.707, fr=0.569, vr=0.208, 0.464, 0.033
+p:-1.235, 0.021, 0.936, fr=0.009, vr=0.038, 0.945, 0.315
+p:-1.016, -0.27, 1.363, vr=0.617, 0.744, 0.167
+p:-0.273, -0.534, 0.858, fr=0.431, vr=0.413, 0.618, 0.084
+p:-1.092, -1.479, 0.929, vr=0.077, 0.427, 0.449
+p:-1.036, 0.017, 1.33, fr=1.386, vr=0.597, 0.736, 0.004
+p:-0.013, -0.935, 0.756, vr=0.407, 0.639, 0.064
+p:-2.9058766217682477, 0.43351749088065195, 1.9038245717595679, fr=0.771, vr=0.739, 0.672, 0.101
+p:-1.4799096856336402, 0.5676780748934139, 1.687066401736064, vr=0.12, 0.544, 0.24
+p:0.489, -0.917, 2.132, fr=0.522, vr=0.322, 0.906, 0.344
+p:-0.529, -0.318, 0.981, vr=0.478, 0.582, 0.002
+j:5, 2, vr=0.4605, 0.577, 0.228
+j:0, 4, vr=0.24, 0.4855, 0.096
+j:7, 2, vr=0.3075, 0.7195, 0.33399999999999996
+j:8, 7, vr=0.25, 0.7869999999999999, 0.34199999999999997
+j:9, 4, vr=0.315, 0.471, 0.0665
+j:8, 3, vr=0.3685, 0.7745, 0.327
+j:10, 8, vr=0.145, 0.8895, 0.3145
+j:11, 2, vr=0.492, 0.7215, 0.23249999999999998
+j:5, 4, vr=0.48, 0.5249999999999999, 0.1765
+j:17, 4, vr=0.4175, 0.548, 0.092
+j:13, 6, vr=0.079, 0.4415, 0.372
+j:6, 1, vr=0.254, 0.5255, 0.2435
+j:10, 5, vr=0.28800000000000003, 0.7585, 0.28400000000000003
+j:14, 11, vr=0.607, 0.74, 0.0855
+j:1, 2, vr=0.4525, 0.6355, 0.27549999999999997
+j:14, 2, vr=0.482, 0.7175, 0.151
+j:16, 14, vr=0.6679999999999999, 0.704, 0.052500000000000005
+j:19, 0, vr=0.089, 0.5185, 0.16599999999999998
+j:8, 6, vr=0.1665, 0.645, 0.3045
+j:18, 8, vr=0.28700000000000003, 0.87, 0.32899999999999996
+j:12, 17, vr=0.4455, 0.6, 0.043000000000000003
+j:19, 12, vr=0.299, 0.563, 0.121
+j:11, 5, vr=0.522, 0.6695, 0.1795
+j:4, 15, vr=0.4145, 0.5585, 0.082
+j:8, 5, vr=0.3395, 0.7144999999999999, 0.253
+
+Saved 'genotypes_jump/HoF-jump-f0-eps002-center-run9.gen' (1)
+Log saved to logs_jump/log-jump-f0-eps002-center-run9.json
+Elapsed time: 917.31 seconds
+VMNeuronManager.autoload: Neuro classes added: S1 PIDV PIDP Thr SeeLight2 Nn Light SeeLight Delay S0 
+UserScripts.autoload: 20 user scripts added.

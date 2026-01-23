@@ -1,0 +1,11 @@
+# Force random placement (overrides standard_placement.inc)
+
+@include "standard_placement.inc"
+
+function placeCreatureRandomly(cr, centered, rotation)
+{
+    # Ignore 'centered', always random
+    cr.move(Math.rnd01 * 10 - 5, 0, Math.rnd01 * 10 - 5);
+    if (rotation == 1)
+        cr.rotate(0, 0, Math.rndUni(-Math.pi, Math.pi));
+}

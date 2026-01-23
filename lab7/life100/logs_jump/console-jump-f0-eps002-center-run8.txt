@@ -1,0 +1,379 @@
+Argument values: path=/home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54, lib=None, sim=eval-allcriteria-mini.sim;deterministic.sim;recording-body-coords.sim;only-body.sim, genformat=0, initialgenotype=None, opt=jumpdistance, popsize=60, generations=300, tournament=7, pmut=0.9, pxov=0.0, hof_size=1, hof_savefile=genotypes_jump/HoF-jump-f0-eps002-center-run8.gen, max_numparts=20, max_numjoints=40, max_numneurons=0, max_numconnections=0, max_numgenochars=None, log_file=logs_jump/log-jump-f0-eps002-center-run8.json, stagnation_generations=None, plateau_escape=False, eps=0.02, placement=center
+Using Framsticks version: 5.4
+Home (writable) dir     : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+Resources dir           : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+
+Available objects: ['CheckpointEvent', 'Collision', 'CrCollision', 'Creature', 'CreatureSettings', 'CreatureSignals', 'CreatureSnapshot', 'Dictionary', 'ExpProperties', 'ExpState', 'ExtValue', 'File', 'FunctionReference', 'GenMan', 'GenManStats', 'GenePool', 'GenePools', 'Geno', 'GenoConverters', 'Genotype', 'Interface', 'Joint', 'Loader', 'Math', 'MechJoint', 'MechPart', 'MessageCatcher', 'Model', 'ModelGeometry', 'ModelSymmetry', 'Neuro', 'NeuroClass', 'NeuroClassLibrary', 'NeuroDef', 'NeuroSignals', 'NeuronsSimEnabled', 'ODE', 'Orient', 'Part', 'Population', 'Populations', 'Ref', 'Signal', 'SignalView', 'SimilMeasure', 'SimilMeasureDistribution', 'SimilMeasureGreedy', 'SimilMeasureHungarian', 'Simulator', 'SlaveSimulators', 'StopEvent', 'String', 'UserScripts', 'Vector', 'WireframeAppearance', 'World', 'WorldMap', 'WorldSignals', 'XYZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'c_api', 'ctypes', 'home_dir', 'init', 'os', 're', 'res_dir', 'sim_params', 'stats', 'sys']
+
+Basic tests OK. Using settings: ['eval-allcriteria-mini.sim', 'deterministic.sim', 'recording-body-coords.sim', 'only-body.sim']
+
+Simulator.load: Loading from 'eval-allcriteria-mini.sim'
+Simulator.load: Loaded simulator settings from 'eval-allcriteria-mini.sim'
+Simulator.load: Loading from 'deterministic.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Parameter values that make the evaluation of a Framsticks creature deterministic.
+Loader.load:  The values turn off random noise, so evaluation of the same genotype will always yield the same performance.
+Loader.load:  The advantage is that you do not need to evaluate a genotype many times, and performance values are reliable.
+Loader.load:  The disadvantage is that evolved creatures are "overfitting", i.e. rely entirely on the specific environment,
+Loader.load:  and their behavior may be different in any other environment or (even slightly) changed conditions or parameter values,
+Loader.load:  so each creature evolved using these settings must be later inspected using exactly the same setup.
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded simulator settings from 'deterministic.sim'
+Simulator.load: Loading from 'recording-body-coords.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  The recording of the "center of gravity" (or mass) of all Parts of a creature during its lifespan, and
+Loader.load:  the recording of coordinates of all Parts are stored as data->bodyrecording.
+Loader.load:  Use STORE_ALL_PART_COORDS below to decide how much data you need recorded - maybe only COG and no Parts.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=0 below, only COG is stored and the format is
+Loader.load:  [ [cog1x,cog1y,cog1z], [cog2x,cog2y,cog2z], [cog3x,cog3y,cog3z], ...]
+Loader.load:  where index numbers in the names are simulation steps.
+Loader.load:  So you get a vector of COG x,y,z coordinates repeated for every simulation step.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=1 below, the format is more verbose with one more level of nesting, because after the COG,
+Loader.load:  the list of coordinates of all Parts follows (the first index in the names below is the simulation step, the second one is Part number)
+Loader.load:  [ [[cog1x,cog1y,cog1z], [p1_1x,p1_1y,p1_1z], [p1_2x,p1_2y,p1_2z], ...], ...]
+Loader.load: 
+Loader.load:  You can further limit the amount of stored data by recording coordinates less frequently - see onCreaturesStep() comment below.
+Loader.load:  Adjust 'Energy0' to achieve the lifespan you need.
+Loader.load:  'evalcount' should likely be 1 unless you need other performance criteria (like vertpos or distance) averaged from multiple evaluations.
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution unless you prefer to provide its path when loading.
+Simulator.load: Loaded simulator settings from 'recording-body-coords.sim'
+Simulator.load: Loading from 'only-body.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Turns off mutations in f0, f1, f4, fH related to brain (disables adding and modifying neurons)
+Simulator.load: Loaded simulator settings from 'only-body.sim'
+Using mutation rate from frams: 0.0
+gen	nevals	avg	stddev	min	max
+0  	60    	0  	0     	0  	0  
+1  	55    	0  	0     	0  	0  
+2  	52    	0  	0     	0  	0  
+3  	58    	0  	0     	0  	0  
+4  	54    	0  	0     	0  	0  
+5  	54    	0  	0     	0  	0  
+6  	55    	0  	0     	0  	0  
+7  	53    	0  	0     	0  	0  
+8  	48    	0  	0     	0  	0  
+9  	58    	0  	0     	0  	0  
+10 	54    	0  	0     	0  	0  
+11 	57    	0  	0     	0  	0  
+12 	51    	0  	0     	0  	0  
+13 	56    	0  	0     	0  	0  
+14 	54    	0  	0     	0  	0  
+15 	54    	0  	0     	0  	0  
+16 	51    	0  	0     	0  	0  
+17 	54    	0  	0     	0  	0  
+18 	53    	0  	0     	0  	0  
+19 	52    	0  	0     	0  	0  
+20 	54    	0  	0     	0  	0  
+21 	53    	0  	0     	0  	0  
+22 	57    	0  	0     	0  	0  
+23 	57    	0  	0     	0  	0  
+24 	53    	0  	0     	0  	0  
+25 	55    	0  	0     	0  	0  
+26 	51    	0  	0     	0  	0  
+27 	55    	0  	0     	0  	0  
+28 	53    	0  	0     	0  	0  
+29 	56    	0  	0     	0  	0  
+30 	52    	0  	0     	0  	0  
+31 	52    	0  	0     	0  	0  
+32 	55    	0  	0     	0  	0  
+33 	54    	0  	0     	0  	0  
+34 	56    	0  	0     	0  	0  
+35 	54    	0  	0     	0  	0  
+36 	54    	0  	0     	0  	0  
+37 	53    	0  	0     	0  	0  
+38 	55    	0  	0     	0  	0  
+39 	53    	0  	0     	0  	0  
+40 	57    	0  	0     	0  	0  
+41 	55    	0  	0     	0  	0  
+42 	54    	0  	0     	0  	0  
+43 	52    	0  	0     	0  	0  
+44 	55    	0  	0     	0  	0  
+45 	53    	0  	0     	0  	0  
+46 	56    	0  	0     	0  	0  
+47 	49    	0  	0     	0  	0  
+48 	52    	0  	0     	0  	0  
+49 	57    	0  	0     	0  	0  
+50 	51    	0  	0     	0  	0  
+51 	55    	0  	0     	0  	0  
+52 	59    	0  	0     	0  	0  
+53 	52    	0  	0     	0  	0  
+54 	55    	0  	0     	0  	0  
+55 	54    	0  	0     	0  	0  
+56 	53    	0  	0     	0  	0  
+57 	52    	0  	0     	0  	0  
+58 	52    	0  	0     	0  	0  
+59 	56    	0  	0     	0  	0  
+60 	53    	0  	0     	0  	0  
+61 	54    	0  	0     	0  	0  
+62 	46    	0  	0     	0  	0  
+63 	57    	0  	0     	0  	0  
+64 	50    	0  	0     	0  	0  
+65 	53    	0  	0     	0  	0  
+66 	60    	0  	0     	0  	0  
+67 	55    	0  	0     	0  	0  
+68 	54    	0  	0     	0  	0  
+69 	55    	0  	0     	0  	0  
+70 	55    	0  	0     	0  	0  
+71 	58    	0  	0     	0  	0  
+72 	55    	0  	0     	0  	0  
+73 	51    	0  	0     	0  	0  
+74 	57    	0  	0     	0  	0  
+75 	55    	2.2624e-05	0.000173778	0  	0.00135744
+76 	53    	6.19894e-05	0.000346188	0  	0.00236192
+77 	55    	0.000130359	0.000496919	0  	0.00236192
+78 	55    	0.000216122	0.000577037	0  	0.00245258
+79 	48    	0.000319305	0.000663357	0  	0.00245327
+80 	58    	0.000476433	0.00105906 	0  	0.00553084
+81 	55    	0.00043061 	0.00111941 	0  	0.00553084
+82 	58    	0.00050417 	0.00133747 	0  	0.00586461
+83 	53    	0.000433855	0.00123908 	0  	0.00636358
+84 	54    	0.000856091	0.00185356 	0  	0.00926935
+85 	51    	0.00159676 	0.00249854 	0  	0.00926935
+86 	52    	0.00118838 	0.00208748 	0  	0.00795711
+87 	60    	0.000982037	0.00198132 	0  	0.00750882
+88 	50    	0.00100701 	0.00197147 	0  	0.00750882
+89 	58    	0.000357938	0.00143589 	0  	0.00750882
+90 	57    	0.000658819	0.0018664  	0  	0.00857753
+91 	55    	0.000765821	0.00193897 	0  	0.00857753
+92 	54    	0.000935836	0.00224203 	0  	0.00959537
+93 	59    	0.00114559 	0.00277664 	0  	0.010427  
+94 	51    	0.00153743 	0.00332484 	0  	0.010427  
+95 	51    	0.00193874 	0.00384236 	0  	0.0129809 
+96 	57    	0.00128951 	0.00357518 	0  	0.0130804 
+97 	53    	0.00283571 	0.00489987 	0  	0.0147062 
+98 	56    	0.00202399 	0.00432052 	0  	0.0130804 
+99 	55    	0.00144274 	0.00375469 	0  	0.0130804 
+100	54    	0.00207822 	0.0045299  	0  	0.0183013 
+101	56    	0.00152196 	0.00387283 	0  	0.0129461 
+102	54    	0.00147539 	0.00393632 	0  	0.0134412 
+103	57    	0.000846499	0.00296458 	0  	0.01349   
+104	53    	0.000946322	0.00321513 	0  	0.0138466 
+105	55    	0.00210446 	0.00447025 	0  	0.0138466 
+106	55    	0.000969928	0.00325177 	0  	0.0138466 
+107	54    	0.000562592	0.00255395 	0  	0.0139714 
+108	54    	0.00114554 	0.00366239 	0  	0.0161246 
+109	58    	0.00149049 	0.00432075 	0  	0.0207047 
+110	56    	0.00181844 	0.0046183  	0  	0.0207047 
+111	54    	0.00190097 	0.0044129  	0  	0.0161168 
+112	51    	0.0029203  	0.00530584 	0  	0.0161168 
+113	53    	0.00312101 	0.00573656 	0  	0.0161168 
+114	55    	0.00216357 	0.00516248 	0  	0.0161168 
+115	52    	0.0020692  	0.00510949 	0  	0.0161168 
+116	55    	0.00150192 	0.00437072 	0  	0.0161163 
+117	56    	0.000913519	0.00350771 	0  	0.0161163 
+118	53    	0.00109242 	0.00357913 	0  	0.0161163 
+119	57    	0.000788562	0.0027599  	0  	0.0161131 
+120	56    	0.000258686	0.00102193 	0  	0.00617829
+121	54    	0.000361193	0.00111634 	0  	0.0065882 
+122	52    	0.000666598	0.00164835 	0  	0.00667204
+123	56    	0.000670964	0.00176806 	0  	0.00844036
+124	51    	0.00117704 	0.00237372 	0  	0.00844036
+125	54    	0.00158499 	0.00360522 	0  	0.0217625 
+126	54    	0.00208045 	0.00472561 	0  	0.0217625 
+127	56    	0.00156496 	0.00385118 	0  	0.0173419 
+128	55    	0.00238243 	0.00466464 	0  	0.0173419 
+129	51    	0.00262428 	0.00498948 	0  	0.0186882 
+130	52    	0.0022513  	0.00454175 	0  	0.0186882 
+131	58    	0.00140643 	0.00429858 	0  	0.0215231 
+132	55    	0.00237241 	0.00536997 	0  	0.0261827 
+133	51    	0.00356111 	0.00700077 	0  	0.0261827 
+134	47    	0.0044581  	0.00814518 	0  	0.0261848 
+135	55    	0.003137   	0.00714597 	0  	0.0259095 
+136	56    	0.00274117 	0.00749652 	0  	0.0259095 
+137	55    	0.00216351 	0.00680492 	0  	0.0259095 
+138	55    	0.00113988 	0.00438874 	0  	0.0224688 
+139	55    	0.00154059 	0.00477525 	0  	0.0224688 
+140	56    	0.00190144 	0.00560343 	0  	0.0259095 
+141	50    	0.00279978 	0.00638956 	0  	0.025905  
+142	54    	0.00260725 	0.00590078 	0  	0.0258518 
+143	53    	0.00279043 	0.00605375 	0  	0.0258518 
+144	55    	0.00218242 	0.00541914 	0  	0.0237644 
+145	56    	0.00211622 	0.00538607 	0  	0.0237644 
+146	53    	0.0020441  	0.00442917 	0  	0.0193595 
+147	56    	0.00189824 	0.00415248 	0  	0.0159512 
+148	57    	0.00128116 	0.00341841 	0  	0.0157768 
+149	49    	0.00286617 	0.00528282 	0  	0.020065  
+150	55    	0.0015098  	0.00386732 	0  	0.0157768 
+151	55    	0.00163515 	0.00391771 	0  	0.0157768 
+152	56    	0.0026463  	0.0045158  	0  	0.0154144 
+153	52    	0.00215538 	0.00449378 	0  	0.0154144 
+154	53    	0.00188496 	0.0039885  	0  	0.0139043 
+155	51    	0.00213674 	0.00406763 	0  	0.0139043 
+156	53    	0.00348895 	0.00545935 	0  	0.018717  
+157	56    	0.00367751 	0.0063018  	0  	0.0253547 
+158	52    	0.00421821 	0.00769288 	0  	0.0253547 
+159	56    	0.00353541 	0.00741906 	0  	0.0253547 
+160	56    	0.00261196 	0.0058522  	0  	0.0253528 
+161	53    	0.00292332 	0.00636646 	0  	0.0240085 
+Selection: ignoring 1 infeasible solution in a population of size 60
+162	54    	0.00305375 	0.00631522 	0  	0.0240085 
+163	54    	0.00321251 	0.00747465 	0  	0.0240085 
+164	53    	0.00403191 	0.00808654 	0  	0.0240302 
+165	53    	0.00340177 	0.0075799  	0  	0.0240302 
+166	51    	0.00495627 	0.00862616 	0  	0.0240302 
+167	49    	0.00698708 	0.0101302  	0  	0.0302859 
+168	55    	0.0049016  	0.00878044 	0  	0.0302755 
+169	54    	0.00465788 	0.00945375 	0  	0.0307631 
+170	54    	0.00622789 	0.0106536  	0  	0.0307631 
+171	57    	0.00305538 	0.007279   	0  	0.0306032 
+172	56    	0.00244357 	0.00559858 	0  	0.0302778 
+173	54    	0.00527965 	0.00953883 	0  	0.0302778 
+174	53    	0.00604746 	0.0110281  	0  	0.0302778 
+175	55    	0.00353295 	0.00863349 	0  	0.0302778 
+176	49    	0.00536737 	0.0101988  	0  	0.0302778 
+177	52    	0.00589912 	0.0110196  	0  	0.0302778 
+178	57    	0.00258422 	0.00757955 	0  	0.0302778 
+179	56    	0.00322877 	0.00779872 	0  	0.0302778 
+180	55    	0.00328469 	0.00783094 	0  	0.0302778 
+181	57    	0.00321902 	0.00811241 	0  	0.0302778 
+182	54    	0.00218301 	0.00625911 	0  	0.0302778 
+183	52    	0.00482756 	0.00884162 	0  	0.0302778 
+Selection: ignoring 1 infeasible solution in a population of size 60
+184	52    	0.00569791 	0.00926281 	0  	0.0301415 
+185	53    	0.00568317 	0.00960145 	0  	0.0303208 
+186	55    	0.00342256 	0.00799948 	0  	0.0303208 
+187	56    	0.0046286  	0.00962815 	0  	0.0303208 
+188	56    	0.00228093 	0.00649907 	0  	0.0295053 
+189	52    	0.00371832 	0.00867239 	0  	0.0297899 
+190	55    	0.00306375 	0.0074251  	0  	0.0297899 
+191	55    	0.00258123 	0.0069243  	0  	0.0297899 
+192	57    	0.00409441 	0.00855012 	0  	0.0297899 
+193	52    	0.00622191 	0.010759   	0  	0.0297899 
+194	57    	0.00394509 	0.00895949 	0  	0.0291518 
+195	54    	0.0037832  	0.00858674 	0  	0.0295053 
+196	50    	0.00452641 	0.00897174 	0  	0.0296634 
+197	54    	0.00588521 	0.00960126 	0  	0.0288162 
+198	54    	0.00565482 	0.00874299 	0  	0.0274284 
+199	52    	0.00699414 	0.00998078 	0  	0.0278943 
+200	55    	0.00497012 	0.00890308 	0  	0.0280011 
+201	54    	0.00418188 	0.00709465 	0  	0.0278853 
+202	55    	0.00530084 	0.00865461 	0  	0.0291483 
+203	56    	0.00395983 	0.00769358 	0  	0.0280695 
+204	56    	0.00419835 	0.00917315 	0  	0.0280721 
+205	57    	0.00397675 	0.00756727 	0  	0.0279231 
+206	52    	0.00550102 	0.00843964 	0  	0.0279231 
+207	50    	0.00520159 	0.00886099 	0  	0.0279231 
+208	53    	0.00634285 	0.010041   	0  	0.0279237 
+209	54    	0.00541974 	0.00947965 	0  	0.0279231 
+210	56    	0.0035476  	0.00804524 	0  	0.0294447 
+211	55    	0.0047     	0.00842607 	0  	0.0294447 
+212	53    	0.00472579 	0.0084449  	0  	0.0294447 
+213	56    	0.0040341  	0.00893311 	0  	0.0294447 
+214	50    	0.00545271 	0.00997791 	0  	0.0294447 
+215	54    	0.00486163 	0.00897766 	0  	0.0294447 
+216	53    	0.004084   	0.00859823 	0  	0.0294447 
+217	54    	0.00388026 	0.00791929 	0  	0.0294447 
+218	54    	0.00527288 	0.00977153 	0  	0.0298086 
+219	55    	0.00630339 	0.010382   	0  	0.0298431 
+220	56    	0.00465188 	0.00816859 	0  	0.0298431 
+221	56    	0.00488202 	0.00949525 	0  	0.0297718 
+222	57    	0.00345977 	0.00817296 	0  	0.0297828 
+223	57    	0.0034335  	0.00791532 	0  	0.0286778 
+224	54    	0.00283355 	0.00706446 	0  	0.0286778 
+225	51    	0.00283985 	0.00600704 	0  	0.0267643 
+226	52    	0.0031085  	0.00642799 	0  	0.0259507 
+227	51    	0.00325813 	0.00640852 	0  	0.0259677 
+228	54    	0.00375126 	0.00807292 	0  	0.0259684 
+Selection: ignoring 1 infeasible solution in a population of size 60
+229	55    	0.00241617 	0.00606124 	0  	0.0259684 
+230	55    	0.00237257 	0.00534038 	0  	0.0177325 
+231	48    	0.00332491 	0.00686156 	0  	0.0259677 
+232	58    	0.00186719 	0.0054692  	0  	0.0259677 
+233	54    	0.00145935 	0.00524308 	0  	0.0277488 
+234	54    	0.00149435 	0.00514998 	0  	0.0259677 
+235	56    	0.00147334 	0.00380405 	0  	0.0127981 
+236	53    	0.00247467 	0.00481067 	0  	0.0174813 
+237	53    	0.00358883 	0.0061443  	0  	0.017495  
+238	53    	0.00307134 	0.00601872 	0  	0.017495  
+239	57    	0.000998025	0.00371985 	0  	0.0164559 
+240	53    	0.00274724 	0.00612736 	0  	0.02595   
+241	55    	0.00190014 	0.00449009 	0  	0.0164956 
+242	55    	0.00213483 	0.00517345 	0  	0.017495  
+243	55    	0.00305666 	0.00592698 	0  	0.0167573 
+244	52    	0.002583   	0.00537697 	0  	0.016756  
+245	58    	0.00193963 	0.00487276 	0  	0.0199606 
+246	56    	0.00186257 	0.00464022 	0  	0.0199606 
+247	54    	0.00331194 	0.00603104 	0  	0.0266901 
+248	57    	0.002285   	0.00552984 	0  	0.0283658 
+249	56    	0.00206873 	0.00495529 	0  	0.0221164 
+250	52    	0.00244851 	0.00585233 	0  	0.0221164 
+251	55    	0.00198823 	0.00499704 	0  	0.0199653 
+252	57    	0.0022431  	0.00534114 	0  	0.0217339 
+253	55    	0.00342563 	0.00646536 	0  	0.0217339 
+254	54    	0.00380753 	0.00720907 	0  	0.0221164 
+255	56    	0.00179501 	0.00479579 	0  	0.0221164 
+256	54    	0.001583   	0.00457381 	0  	0.0217339 
+257	54    	0.00173398 	0.00466717 	0  	0.0217339 
+258	52    	0.00166304 	0.00379501 	0  	0.0138974 
+259	57    	0.00107724 	0.00284572 	0  	0.0126323 
+260	58    	0.00136135 	0.00335922 	0  	0.0127808 
+261	53    	0.00135361 	0.00343058 	0  	0.0127447 
+262	54    	0.00174723 	0.00363045 	0  	0.0130083 
+263	54    	0.00159387 	0.00347912 	0  	0.0127447 
+264	57    	0.00116844 	0.00252601 	0  	0.0126505 
+265	54    	0.00115986 	0.00283302 	0  	0.0127921 
+266	53    	0.00221439 	0.00399091 	0  	0.0155454 
+267	55    	0.00201812 	0.00405327 	0  	0.0153427 
+268	53    	0.00254677 	0.00485192 	0  	0.0174301 
+269	52    	0.00364542 	0.00584116 	0  	0.0174301 
+270	55    	0.0031176  	0.00578645 	0  	0.0181204 
+271	55    	0.00412181 	0.00664955 	0  	0.019738  
+272	55    	0.00306819 	0.00578977 	0  	0.0185144 
+273	56    	0.00230727 	0.00524752 	0  	0.0185144 
+274	55    	0.00160188 	0.00408615 	0  	0.0145962 
+275	54    	0.00162991 	0.0039873  	0  	0.0145962 
+276	53    	0.00209214 	0.00470272 	0  	0.0189612 
+277	55    	0.00388192 	0.00637559 	0  	0.0207041 
+278	57    	0.00450927 	0.00760278 	0  	0.0207076 
+279	50    	0.00464466 	0.00773085 	0  	0.0208202 
+280	52    	0.0047519  	0.00773771 	0  	0.0207673 
+281	54    	0.00394377 	0.00706636 	0  	0.0225833 
+282	54    	0.00407157 	0.00737276 	0  	0.0243675 
+283	56    	0.00486188 	0.00797685 	0  	0.0243675 
+284	55    	0.00542105 	0.00861519 	0  	0.0228352 
+285	50    	0.00618912 	0.00913727 	0  	0.023407  
+286	50    	0.0076292  	0.00945226 	0  	0.0244081 
+287	55    	0.0070795  	0.00964115 	0  	0.0257236 
+288	56    	0.00702008 	0.00944626 	0  	0.0257224 
+289	54    	0.00659187 	0.00951314 	0  	0.0257224 
+290	48    	0.009368   	0.0113306  	0  	0.0259786 
+291	52    	0.00822409 	0.0111334  	0  	0.0271599 
+292	56    	0.00927508 	0.0113524  	0  	0.0271599 
+293	56    	0.00684541 	0.0105602  	0  	0.0271599 
+294	57    	0.00465664 	0.00916174 	0  	0.0268428 
+295	55    	0.0054916  	0.00982041 	0  	0.0268428 
+296	54    	0.00580463 	0.010085   	0  	0.0268204 
+297	56    	0.00582693 	0.0098527  	0  	0.0268428 
+298	53    	0.0055278  	0.00970913 	0  	0.0267196 
+299	53    	0.00810162 	0.0108588  	0  	0.0278805 
+300	50    	0.00768895 	0.0107516  	0  	0.0278805 
+Best individuals:
+(0.030763078354590277,) 	<--	 //0
+p:-1.445, -0.723, -1.089, fr=1.804, vr=0.663, 0.144, 0.378
+p:-1.67, -0.613, -0.852, vr=0.84, 0.047, 0.358
+p:-1.9582822613286504, -0.8431750374707816, -0.10085045294495143, fr=0.998, vr=0.699, 0.176, 0.412
+p:-2.069, -0.085, -0.969, vr=0.683, 0.116, 0.427
+p:-1.947, -2.314, -0.45, fr=0.357, vr=0.862, 0.066, 0.34
+p:-1.89, -1.155, -0.221, fr=0.943, vr=0.632, 0.241, 0.424
+p:-1.759, 0.008, -0.884, vr=0.589, 0.111, 0.499
+p:-1.627, -0.573, -0.847, fr=1.921, vr=0.824, 0.097, 0.337
+j:1, 0, vr=0.932, 0.099, 0.337
+j:4, 0, vr=0.673, 0.13, 0.40249999999999997
+j:3, 0, vr=0.7625, 0.105, 0.359
+j:5, 2, vr=0.6655, 0.2085, 0.418
+j:7, 1, vr=0.7144999999999999, 0.079, 0.4285
+j:2, 7, vr=0.6439999999999999, 0.1435, 0.4555
+j:7, 0, vr=0.626, 0.1275, 0.4385
+j:5, 0, vr=0.6475, 0.1925, 0.401
+j:6, 7, vr=0.832, 0.07200000000000001, 0.34750000000000003
+j:0, 2, vr=0.681, 0.15999999999999998, 0.395
+
+Saved 'genotypes_jump/HoF-jump-f0-eps002-center-run8.gen' (1)
+Log saved to logs_jump/log-jump-f0-eps002-center-run8.json
+Elapsed time: 744.36 seconds
+VMNeuronManager.autoload: Neuro classes added: S1 PIDV PIDP Thr SeeLight2 Nn Light SeeLight Delay S0 
+UserScripts.autoload: 20 user scripts added.

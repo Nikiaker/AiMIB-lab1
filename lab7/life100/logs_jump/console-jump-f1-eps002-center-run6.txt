@@ -1,0 +1,534 @@
+Argument values: path=/home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54, lib=None, sim=eval-allcriteria-mini.sim;deterministic.sim;recording-body-coords.sim, genformat=1, initialgenotype=None, opt=jumpdistance, popsize=60, generations=300, tournament=7, pmut=0.9, pxov=0.0, hof_size=1, hof_savefile=genotypes_jump/HoF-jump-f1-eps002-center-run6.gen, max_numparts=20, max_numjoints=40, max_numneurons=10, max_numconnections=20, max_numgenochars=None, log_file=logs_jump/log-jump-f1-eps002-center-run6.json, stagnation_generations=None, plateau_escape=False, eps=0.02, placement=center
+Using Framsticks version: 5.4
+Home (writable) dir     : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+Resources dir           : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+
+Available objects: ['CheckpointEvent', 'Collision', 'CrCollision', 'Creature', 'CreatureSettings', 'CreatureSignals', 'CreatureSnapshot', 'Dictionary', 'ExpProperties', 'ExpState', 'ExtValue', 'File', 'FunctionReference', 'GenMan', 'GenManStats', 'GenePool', 'GenePools', 'Geno', 'GenoConverters', 'Genotype', 'Interface', 'Joint', 'Loader', 'Math', 'MechJoint', 'MechPart', 'MessageCatcher', 'Model', 'ModelGeometry', 'ModelSymmetry', 'Neuro', 'NeuroClass', 'NeuroClassLibrary', 'NeuroDef', 'NeuroSignals', 'NeuronsSimEnabled', 'ODE', 'Orient', 'Part', 'Population', 'Populations', 'Ref', 'Signal', 'SignalView', 'SimilMeasure', 'SimilMeasureDistribution', 'SimilMeasureGreedy', 'SimilMeasureHungarian', 'Simulator', 'SlaveSimulators', 'StopEvent', 'String', 'UserScripts', 'Vector', 'WireframeAppearance', 'World', 'WorldMap', 'WorldSignals', 'XYZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'c_api', 'ctypes', 'home_dir', 'init', 'os', 're', 'res_dir', 'sim_params', 'stats', 'sys']
+
+Basic tests OK. Using settings: ['eval-allcriteria-mini.sim', 'deterministic.sim', 'recording-body-coords.sim']
+
+Simulator.load: Loading from 'eval-allcriteria-mini.sim'
+Simulator.load: Loaded simulator settings from 'eval-allcriteria-mini.sim'
+Simulator.load: Loading from 'deterministic.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Parameter values that make the evaluation of a Framsticks creature deterministic.
+Loader.load:  The values turn off random noise, so evaluation of the same genotype will always yield the same performance.
+Loader.load:  The advantage is that you do not need to evaluate a genotype many times, and performance values are reliable.
+Loader.load:  The disadvantage is that evolved creatures are "overfitting", i.e. rely entirely on the specific environment,
+Loader.load:  and their behavior may be different in any other environment or (even slightly) changed conditions or parameter values,
+Loader.load:  so each creature evolved using these settings must be later inspected using exactly the same setup.
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded simulator settings from 'deterministic.sim'
+Simulator.load: Loading from 'recording-body-coords.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  The recording of the "center of gravity" (or mass) of all Parts of a creature during its lifespan, and
+Loader.load:  the recording of coordinates of all Parts are stored as data->bodyrecording.
+Loader.load:  Use STORE_ALL_PART_COORDS below to decide how much data you need recorded - maybe only COG and no Parts.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=0 below, only COG is stored and the format is
+Loader.load:  [ [cog1x,cog1y,cog1z], [cog2x,cog2y,cog2z], [cog3x,cog3y,cog3z], ...]
+Loader.load:  where index numbers in the names are simulation steps.
+Loader.load:  So you get a vector of COG x,y,z coordinates repeated for every simulation step.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=1 below, the format is more verbose with one more level of nesting, because after the COG,
+Loader.load:  the list of coordinates of all Parts follows (the first index in the names below is the simulation step, the second one is Part number)
+Loader.load:  [ [[cog1x,cog1y,cog1z], [p1_1x,p1_1y,p1_1z], [p1_2x,p1_2y,p1_2z], ...], ...]
+Loader.load: 
+Loader.load:  You can further limit the amount of stored data by recording coordinates less frequently - see onCreaturesStep() comment below.
+Loader.load:  Adjust 'Energy0' to achieve the lifespan you need.
+Loader.load:  'evalcount' should likely be 1 unless you need other performance criteria (like vertpos or distance) averaged from multiple evaluations.
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution unless you prefer to provide its path when loading.
+Simulator.load: Loaded simulator settings from 'recording-body-coords.sim'
+Using mutation rate from frams: 0.0
+gen	nevals	avg	stddev	min	max
+0  	60    	0  	0     	0  	0  
+1  	59    	0  	0     	0  	0  
+2  	56    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+3  	48    	0  	0     	0  	0  
+4  	55    	0  	0     	0  	0  
+5  	56    	0  	0     	0  	0  
+6  	53    	0  	0     	0  	0  
+7  	56    	0  	0     	0  	0  
+8  	54    	0  	0     	0  	0  
+9  	51    	0  	0     	0  	0  
+10 	53    	0  	0     	0  	0  
+11 	55    	0  	0     	0  	0  
+12 	52    	0  	0     	0  	0  
+13 	56    	0  	0     	0  	0  
+14 	54    	0  	0     	0  	0  
+15 	54    	0  	0     	0  	0  
+16 	51    	0  	0     	0  	0  
+17 	57    	0  	0     	0  	0  
+18 	56    	0  	0     	0  	0  
+19 	53    	0  	0     	0  	0  
+20 	48    	0  	0     	0  	0  
+21 	53    	0  	0     	0  	0  
+22 	50    	0  	0     	0  	0  
+23 	55    	0  	0     	0  	0  
+24 	54    	0  	0     	0  	0  
+25 	50    	0  	0     	0  	0  
+26 	56    	0  	0     	0  	0  
+27 	53    	0  	0     	0  	0  
+28 	57    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+29 	56    	0  	0     	0  	0  
+30 	51    	0  	0     	0  	0  
+31 	54    	0  	0     	0  	0  
+32 	57    	0  	0     	0  	0  
+33 	53    	0  	0     	0  	0  
+34 	55    	0  	0     	0  	0  
+35 	50    	0  	0     	0  	0  
+36 	52    	0  	0     	0  	0  
+37 	52    	0  	0     	0  	0  
+38 	56    	0  	0     	0  	0  
+39 	55    	0  	0     	0  	0  
+40 	52    	0  	0     	0  	0  
+41 	53    	0  	0     	0  	0  
+42 	54    	0  	0     	0  	0  
+43 	55    	0  	0     	0  	0  
+44 	54    	0  	0     	0  	0  
+45 	51    	0  	0     	0  	0  
+46 	57    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+47 	55    	0  	0     	0  	0  
+48 	56    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+49 	52    	0  	0     	0  	0  
+50 	51    	0  	0     	0  	0  
+51 	57    	0  	0     	0  	0  
+52 	52    	0  	0     	0  	0  
+53 	51    	0  	0     	0  	0  
+54 	52    	0  	0     	0  	0  
+55 	54    	0  	0     	0  	0  
+56 	56    	0  	0     	0  	0  
+57 	54    	0  	0     	0  	0  
+58 	54    	0  	0     	0  	0  
+59 	51    	0  	0     	0  	0  
+60 	54    	0  	0     	0  	0  
+61 	54    	0  	0     	0  	0  
+62 	50    	0  	0     	0  	0  
+63 	54    	1.35372e-05	0.000103982	0  	0.000812235
+64 	56    	4.03115e-05	0.000175724	0  	0.000812235
+65 	52    	0.000283986	0.000922968	0  	0.00666714 
+66 	50    	0.00391611 	0.023285   	0  	0.182308   
+67 	53    	0.0150371  	0.0449806  	0  	0.182308   
+68 	56    	0.0315729  	0.0627247  	0  	0.182308   
+69 	55    	0.0897544  	0.0854286  	0  	0.182308   
+70 	52    	0.0911903  	0.0880761  	0  	0.18402    
+71 	52    	0.0964085  	0.0894856  	0  	0.228641   
+Selection: ignoring 1 infeasible solution in a population of size 60
+72 	58    	0.0878136  	0.095634   	0  	0.25362    
+73 	57    	0.122603   	0.103142   	0  	0.258062   
+74 	47    	0.124787   	0.115591   	0  	0.258062   
+75 	53    	0.109656   	0.122528   	0  	0.258062   
+Selection: ignoring 1 infeasible solution in a population of size 60
+76 	57    	0.107297   	0.115794   	0  	0.258062   
+Selection: ignoring 1 infeasible solution in a population of size 60
+77 	57    	0.148807   	0.118344   	0  	0.301436   
+78 	55    	0.162415   	0.117858   	0  	0.301436   
+79 	55    	0.156836   	0.122269   	0  	0.301436   
+80 	52    	0.136687   	0.138373   	0  	0.301436   
+81 	52    	0.127895   	0.140568   	0  	0.323419   
+82 	57    	0.183307   	0.134347   	0  	0.3238     
+Selection: ignoring 1 infeasible solution in a population of size 60
+83 	57    	0.181281   	0.138674   	0  	0.3238     
+84 	55    	0.13538    	0.140631   	0  	0.3252     
+Selection: ignoring 1 infeasible solution in a population of size 60
+85 	54    	0.170397   	0.149095   	0  	0.325363   
+86 	54    	0.15846    	0.14384    	0  	0.325363   
+87 	56    	0.177103   	0.150909   	0  	0.345669   
+Selection: ignoring 1 infeasible solution in a population of size 60
+88 	54    	0.178343   	0.150613   	0  	0.346016   
+89 	55    	0.178506   	0.152614   	0  	0.346016   
+90 	54    	0.18934    	0.156578   	0  	0.346016   
+Selection: ignoring 1 infeasible solution in a population of size 60
+91 	50    	0.194451   	0.156516   	0  	0.346016   
+92 	55    	0.20364    	0.158935   	0  	0.358907   
+Selection: ignoring 1 infeasible solution in a population of size 60
+93 	57    	0.18416    	0.16209    	0  	0.358907   
+Selection: ignoring 1 infeasible solution in a population of size 60
+94 	52    	0.205376   	0.164158   	0  	0.358907   
+95 	54    	0.214037   	0.160244   	0  	0.363534   
+96 	57    	0.190802   	0.167261   	0  	0.363534   
+97 	57    	0.20826    	0.164197   	0  	0.377938   
+98 	53    	0.21247    	0.163504   	0  	0.377938   
+99 	56    	0.2865     	0.130595   	0  	0.377938   
+Selection: ignoring 1 infeasible solution in a population of size 60
+100	52    	0.209662   	0.174213   	0  	0.378687   
+Selection: ignoring 1 infeasible solution in a population of size 60
+101	56    	0.216089   	0.172196   	0  	0.378687   
+Selection: ignoring 1 infeasible solution in a population of size 60
+102	53    	0.223446   	0.162158   	0  	0.378687   
+103	54    	0.262523   	0.152252   	0  	0.378687   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+104	53    	0.226718   	0.16621    	0  	0.378687   
+105	57    	0.221938   	0.167954   	0  	0.378687   
+106	53    	0.230657   	0.167792   	0  	0.379148   
+107	58    	0.248877   	0.156877   	0  	0.379148   
+108	58    	0.241565   	0.153715   	0  	0.379148   
+Selection: ignoring 1 infeasible solution in a population of size 60
+109	55    	0.258671   	0.155076   	0  	0.379148   
+110	54    	0.212274   	0.168445   	0  	0.379148   
+Selection: ignoring 1 infeasible solution in a population of size 60
+111	58    	0.208245   	0.171007   	0  	0.379148   
+112	53    	0.260656   	0.158539   	0  	0.379148   
+113	53    	0.259208   	0.15426    	0  	0.379148   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+114	53    	0.264171   	0.157056   	0  	0.379148   
+Selection: ignoring 1 infeasible solution in a population of size 60
+115	54    	0.291678   	0.134074   	0  	0.379148   
+116	56    	0.25659    	0.160685   	0  	0.379148   
+117	58    	0.265213   	0.162945   	0  	0.379148   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+118	54    	0.257817   	0.15392    	0  	0.379148   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+119	52    	0.252224   	0.161249   	0  	0.379148   
+120	53    	0.246794   	0.164117   	0  	0.379148   
+Selection: ignoring 1 infeasible solution in a population of size 60
+121	57    	0.219278   	0.15876    	0  	0.379148   
+122	55    	0.240442   	0.164006   	0  	0.379148   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+123	52    	0.262325   	0.150647   	0  	0.379148   
+124	54    	0.237123   	0.163964   	0  	0.379148   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+125	52    	0.251706   	0.162001   	0  	0.379148   
+126	55    	0.246069   	0.164052   	0  	0.379496   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+127	52    	0.241783   	0.16383    	0  	0.379496   
+128	57    	0.233722   	0.160253   	0  	0.379496   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+129	56    	0.194652   	0.17745    	0  	0.379496   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+130	50    	0.271105   	0.155609   	0  	0.379496   
+131	53    	0.280848   	0.136976   	0  	0.379496   
+Selection: ignoring 1 infeasible solution in a population of size 60
+132	56    	0.274641   	0.155859   	0  	0.379496   
+133	55    	0.239747   	0.152844   	0  	0.379496   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+134	50    	0.277952   	0.149197   	0  	0.379496   
+Selection: ignoring 1 infeasible solution in a population of size 60
+135	52    	0.23811    	0.165673   	0  	0.379496   
+136	51    	0.283718   	0.145227   	0  	0.379496   
+Selection: ignoring 1 infeasible solution in a population of size 60
+137	53    	0.256715   	0.170215   	0  	0.379496   
+Selection: ignoring 1 infeasible solution in a population of size 60
+138	57    	0.26848    	0.152241   	0  	0.379502   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+139	52    	0.266915   	0.156864   	0  	0.379502   
+Selection: ignoring 1 infeasible solution in a population of size 60
+140	56    	0.222735   	0.16574    	0  	0.379502   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+141	56    	0.23868    	0.16695    	0  	0.379502   
+142	51    	0.225186   	0.16637    	0  	0.379502   
+Selection: ignoring 1 infeasible solution in a population of size 60
+143	56    	0.287308   	0.139003   	0  	0.379502   
+144	57    	0.281478   	0.147844   	0  	0.379502   
+Selection: ignoring 1 infeasible solution in a population of size 60
+145	55    	0.228383   	0.16433    	0  	0.379502   
+146	54    	0.279514   	0.139245   	0  	0.379502   
+147	58    	0.221369   	0.165545   	0  	0.379502   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+148	52    	0.263814   	0.152924   	0  	0.379502   
+149	52    	0.282086   	0.154265   	0  	0.379502   
+Selection: ignoring 1 infeasible solution in a population of size 60
+150	55    	0.244407   	0.167213   	0  	0.379502   
+151	55    	0.229495   	0.170789   	0  	0.398348   
+Selection: ignoring 1 infeasible solution in a population of size 60
+152	57    	0.268986   	0.152287   	0  	0.398348   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+153	51    	0.287653   	0.153067   	0  	0.398348   
+Selection: ignoring 1 infeasible solution in a population of size 60
+154	55    	0.242634   	0.183848   	0  	0.399591   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+155	56    	0.251926   	0.177838   	0  	0.399591   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+156	55    	0.301093   	0.154693   	0  	0.399591   
+Selection: ignoring 6 infeasible solutions in a population of size 60
+157	57    	0.307961   	0.152751   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+158	56    	0.295251   	0.154301   	0  	0.405922   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+159	51    	0.214518   	0.187124   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+160	57    	0.237656   	0.170419   	0  	0.405922   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+161	54    	0.290913   	0.164151   	0  	0.405923   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+162	56    	0.250868   	0.17991    	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+163	56    	0.279669   	0.163931   	0  	0.405922   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+164	56    	0.271826   	0.164146   	0  	0.405922   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+165	56    	0.259768   	0.177195   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+166	52    	0.292944   	0.160094   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+167	52    	0.28694    	0.16328    	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+168	54    	0.259316   	0.176439   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+169	55    	0.234272   	0.186544   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+170	54    	0.217771   	0.187365   	0  	0.405922   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+171	55    	0.257837   	0.176507   	0  	0.405922   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+172	57    	0.26602    	0.179905   	0  	0.405923   
+Selection: ignoring 7 infeasible solutions in a population of size 60
+173	52    	0.280266   	0.172214   	0  	0.405923   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+174	54    	0.285544   	0.173585   	0  	0.405923   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+175	53    	0.272161   	0.171482   	0  	0.405923   
+Selection: ignoring 1 infeasible solution in a population of size 60
+176	49    	0.288493   	0.164757   	0  	0.405923   
+177	53    	0.292729   	0.166698   	0  	0.405923   
+178	51    	0.29522    	0.156047   	0  	0.405923   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+179	54    	0.283755   	0.161541   	0  	0.405923   
+Selection: ignoring 6 infeasible solutions in a population of size 60
+180	51    	0.318638   	0.152858   	0  	0.405923   
+Selection: ignoring 6 infeasible solutions in a population of size 60
+181	56    	0.290388   	0.162582   	0  	0.405923   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+182	56    	0.269858   	0.175989   	0  	0.405923   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+183	49    	0.263939   	0.177169   	0  	0.405923   
+Selection: ignoring 1 infeasible solution in a population of size 60
+184	51    	0.24359    	0.187412   	0  	0.405923   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+185	54    	0.270864   	0.184105   	0  	0.405923   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+186	53    	0.287124   	0.165956   	0  	0.405923   
+Selection: ignoring 9 infeasible solutions in a population of size 60
+187	56    	0.284499   	0.159483   	0  	0.405923   
+Selection: ignoring 6 infeasible solutions in a population of size 60
+188	57    	0.267878   	0.174722   	0  	0.405923   
+Selection: ignoring 8 infeasible solutions in a population of size 60
+189	51    	0.274526   	0.17721    	0  	0.405923   
+Selection: ignoring 7 infeasible solutions in a population of size 60
+190	50    	0.280028   	0.16684    	0  	0.405923   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+191	56    	0.26148    	0.179815   	0  	0.405923   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+192	53    	0.253688   	0.17518    	0  	0.405923   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+193	56    	0.244619   	0.181528   	0  	0.40803    
+Selection: ignoring 8 infeasible solutions in a population of size 60
+194	54    	0.236289   	0.19018    	0  	0.40803    
+Selection: ignoring 8 infeasible solutions in a population of size 60
+195	54    	0.276731   	0.173312   	0  	0.40803    
+Selection: ignoring 4 infeasible solutions in a population of size 60
+196	53    	0.297917   	0.160565   	0  	0.40803    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+197	53    	0.308228   	0.156362   	0  	0.40803    
+Selection: ignoring 3 infeasible solutions in a population of size 60
+198	55    	0.270403   	0.169205   	0  	0.40803    
+Selection: ignoring 1 infeasible solution in a population of size 60
+199	56    	0.269967   	0.175103   	0  	0.40803    
+Selection: ignoring 2 infeasible solutions in a population of size 60
+200	57    	0.237058   	0.180506   	0  	0.408487   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+201	54    	0.276806   	0.178515   	0  	0.408487   
+202	52    	0.289766   	0.162178   	0  	0.408636   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+203	57    	0.25576    	0.180283   	0  	0.408636   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+204	53    	0.257934   	0.170948   	0  	0.408636   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+205	47    	0.302601   	0.166708   	0  	0.408636   
+Selection: ignoring 1 infeasible solution in a population of size 60
+206	55    	0.264596   	0.176212   	0  	0.408636   
+Selection: ignoring 1 infeasible solution in a population of size 60
+207	53    	0.256017   	0.179269   	0  	0.408636   
+Selection: ignoring 1 infeasible solution in a population of size 60
+208	54    	0.297694   	0.156881   	0  	0.408636   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+209	49    	0.279018   	0.159722   	0  	0.408636   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+210	56    	0.266504   	0.167313   	0  	0.408636   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+211	52    	0.244653   	0.169599   	0  	0.408636   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+212	54    	0.280418   	0.157294   	0  	0.408636   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+213	57    	0.198788   	0.176353   	0  	0.408636   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+214	54    	0.28474    	0.160445   	0  	0.408636   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+215	54    	0.272987   	0.169529   	0  	0.408636   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+216	57    	0.237534   	0.177546   	0  	0.408636   
+Selection: ignoring 7 infeasible solutions in a population of size 60
+217	56    	0.238703   	0.181811   	0  	0.408636   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+218	49    	0.272496   	0.16329    	0  	0.408636   
+Selection: ignoring 8 infeasible solutions in a population of size 60
+219	56    	0.221913   	0.17659    	0  	0.408636   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+220	56    	0.269481   	0.160522   	0  	0.408636   
+Selection: ignoring 8 infeasible solutions in a population of size 60
+221	52    	0.239799   	0.18203    	0  	0.408636   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+222	58    	0.286686   	0.158684   	0  	0.408636   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+223	56    	0.255226   	0.175414   	0  	0.408636   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+224	54    	0.266144   	0.173829   	0  	0.408636   
+Selection: ignoring 1 infeasible solution in a population of size 60
+225	53    	0.259469   	0.177965   	0  	0.408636   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+226	47    	0.28473    	0.175121   	0  	0.408636   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+227	55    	0.261648   	0.174151   	0  	0.40897    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+228	59    	0.243883   	0.176783   	0  	0.40897    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+229	57    	0.250603   	0.171991   	0  	0.40897    
+230	49    	0.262148   	0.177595   	0  	0.40897    
+Selection: ignoring 2 infeasible solutions in a population of size 60
+231	54    	0.228032   	0.178562   	0  	0.40897    
+Selection: ignoring 2 infeasible solutions in a population of size 60
+232	55    	0.253329   	0.178408   	0  	0.40897    
+Selection: ignoring 3 infeasible solutions in a population of size 60
+233	56    	0.220057   	0.184269   	0  	0.40897    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+234	54    	0.247876   	0.18708    	0  	0.40897    
+Selection: ignoring 4 infeasible solutions in a population of size 60
+235	55    	0.248959   	0.181471   	0  	0.40897    
+Selection: ignoring 3 infeasible solutions in a population of size 60
+236	56    	0.258936   	0.178466   	0  	0.40897    
+Selection: ignoring 3 infeasible solutions in a population of size 60
+237	55    	0.221212   	0.179718   	0  	0.40897    
+Selection: ignoring 2 infeasible solutions in a population of size 60
+238	49    	0.287453   	0.155794   	0  	0.40897    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+239	57    	0.232372   	0.177939   	0  	0.40897    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+240	55    	0.239968   	0.18297    	0  	0.40897    
+Selection: ignoring 1 infeasible solution in a population of size 60
+241	52    	0.23669    	0.184204   	0  	0.40897    
+Selection: ignoring 5 infeasible solutions in a population of size 60
+242	57    	0.186186   	0.179883   	0  	0.40897    
+Selection: ignoring 4 infeasible solutions in a population of size 60
+243	52    	0.247281   	0.171665   	0  	0.40897    
+Selection: ignoring 4 infeasible solutions in a population of size 60
+244	52    	0.233722   	0.175154   	0  	0.40897    
+245	56    	0.248297   	0.177689   	0  	0.40897    
+Selection: ignoring 2 infeasible solutions in a population of size 60
+246	50    	0.262274   	0.175328   	0  	0.40897    
+Selection: ignoring 1 infeasible solution in a population of size 60
+247	55    	0.291474   	0.169734   	0  	0.40897    
+Selection: ignoring 3 infeasible solutions in a population of size 60
+248	52    	0.235919   	0.180937   	0  	0.40897    
+Selection: ignoring 2 infeasible solutions in a population of size 60
+249	58    	0.265259   	0.171517   	0  	0.409113   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+250	56    	0.268131   	0.171358   	0  	0.409113   
+Selection: ignoring 1 infeasible solution in a population of size 60
+251	51    	0.275065   	0.164957   	0  	0.409113   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+252	56    	0.27089    	0.173819   	0  	0.409113   
+Selection: ignoring 1 infeasible solution in a population of size 60
+253	53    	0.259837   	0.178345   	0  	0.409164   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+254	58    	0.231873   	0.175041   	0  	0.409163   
+Selection: ignoring 5 infeasible solutions in a population of size 60
+255	57    	0.235678   	0.183816   	0  	0.409163   
+Selection: ignoring 1 infeasible solution in a population of size 60
+256	52    	0.269644   	0.169928   	0  	0.409163   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+257	49    	0.291662   	0.172146   	0  	0.409163   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+258	53    	0.288461   	0.168931   	0  	0.409222   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+259	58    	0.21551    	0.18729    	0  	0.409222   
+Selection: ignoring 6 infeasible solutions in a population of size 60
+260	52    	0.306247   	0.159536   	0  	0.409282   
+Selection: ignoring 9 infeasible solutions in a population of size 60
+261	52    	0.292204   	0.168858   	0  	0.409521   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+262	50    	0.289821   	0.157152   	0  	0.409521   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+263	52    	0.266934   	0.17147    	0  	0.409521   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+264	54    	0.239488   	0.18548    	0  	0.409619   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+265	51    	0.251928   	0.179512   	0  	0.409623   
+Selection: ignoring 1 infeasible solution in a population of size 60
+266	57    	0.260879   	0.173883   	0  	0.409921   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+267	54    	0.226471   	0.189755   	0  	0.409921   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+268	53    	0.250492   	0.183666   	0  	0.409921   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+269	52    	0.260918   	0.182596   	0  	0.409921   
+Selection: ignoring 1 infeasible solution in a population of size 60
+270	53    	0.248852   	0.186772   	0  	0.409921   
+Selection: ignoring 1 infeasible solution in a population of size 60
+271	53    	0.248257   	0.181567   	0  	0.409922   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+272	58    	0.223519   	0.1873     	0  	0.409922   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+273	51    	0.282811   	0.167575   	0  	0.409922   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+274	52    	0.306293   	0.166741   	0  	0.409922   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+275	54    	0.275373   	0.169002   	0  	0.409922   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+276	55    	0.221287   	0.190141   	0  	0.410012   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+277	51    	0.247246   	0.177334   	0  	0.410012   
+Selection: ignoring 1 infeasible solution in a population of size 60
+278	55    	0.267295   	0.168803   	0  	0.410038   
+Selection: ignoring 1 infeasible solution in a population of size 60
+279	52    	0.250742   	0.181283   	0  	0.410038   
+Selection: ignoring 1 infeasible solution in a population of size 60
+280	54    	0.255144   	0.179374   	0  	0.410038   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+281	50    	0.274115   	0.175329   	0  	0.410038   
+Selection: ignoring 1 infeasible solution in a population of size 60
+282	54    	0.290223   	0.175911   	0  	0.412697   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+283	56    	0.271627   	0.177907   	0  	0.412697   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+284	49    	0.253219   	0.18053    	0  	0.412697   
+285	55    	0.259433   	0.17813    	0  	0.412697   
+286	57    	0.281615   	0.16762    	0  	0.412697   
+287	57    	0.24804    	0.180308   	0  	0.412769   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+288	55    	0.278832   	0.16752    	0  	0.412769   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+289	53    	0.260485   	0.177379   	0  	0.412769   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+290	55    	0.263076   	0.178358   	0  	0.412769   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+291	53    	0.235214   	0.184115   	0  	0.412769   
+292	50    	0.297735   	0.159127   	0  	0.412769   
+Selection: ignoring 1 infeasible solution in a population of size 60
+293	54    	0.249893   	0.180978   	0  	0.412769   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+294	53    	0.315832   	0.149983   	0  	0.412769   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+295	56    	0.235954   	0.179251   	0  	0.412769   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+296	55    	0.268856   	0.178451   	0  	0.412769   
+Selection: ignoring 4 infeasible solutions in a population of size 60
+297	55    	0.240378   	0.181715   	0  	0.412769   
+Selection: ignoring 2 infeasible solutions in a population of size 60
+298	54    	0.262182   	0.173902   	0  	0.412769   
+Selection: ignoring 1 infeasible solution in a population of size 60
+299	58    	0.252005   	0.17701    	0  	0.412769   
+Selection: ignoring 3 infeasible solutions in a population of size 60
+300	52    	0.259804   	0.180855   	0  	0.412769   
+Best individuals:
+(0.41276872119970465,) 	<--	 cDMMMX[S][|, 8:1.037, r:1][@, 3:7.494, p:0.556]rMMMM(FqFX[N, 2:1,5:1]qFFQqX[@, 1:1][G], rMCX[S]qfffX[|, -2:0.85]M(QmX[*][G]), )
+Saved 'genotypes_jump/HoF-jump-f1-eps002-center-run6.gen' (1)
+Log saved to logs_jump/log-jump-f1-eps002-center-run6.json
+Elapsed time: 656.63 seconds
+VMNeuronManager.autoload: Neuro classes added: S1 PIDV PIDP Thr SeeLight2 Nn Light SeeLight Delay S0 
+UserScripts.autoload: 20 user scripts added.

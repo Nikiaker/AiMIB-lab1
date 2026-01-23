@@ -114,22 +114,23 @@ function creatureNumJointsForEnergy(cr)
 
 function onBorn(cr)
 {
-	if (g_time0 == null) g_time0 = Math.time;
-	const TRIALS = 50; //try to find free place 50 times
-	var retry = TRIALS;
-	var placed_ok = 0;
-	while (retry--)
-	{
-		var trycentral = (ExpProperties.placement == 1) && (retry == TRIALS - 1); //place central only in the first trial
-		placeCreatureRandomly(cr, trycentral, ExpProperties.rotation);
-		if (!cr.boundingBoxCollisions(0))
-		{
-			placed_ok = 1;
-			break;
-		}
-	}
-	if (!placed_ok)
-		Simulator.message("onBorn() could not avoid collisions.", 1);
+    if (g_time0 == null) g_time0 = Math.time;
+    const TRIALS = 50; //try to find free place 50 times
+    var retry = TRIALS;
+    var placed_ok = 0;
+    while (retry--)
+    {
+        // Use placement_mode parameter (0=central, 1=random)
+        var trycentral = (ExpProperties.placement == 1) && (retry == TRIALS - 1) && (ExpProperties.placement_mode == 0);
+        placeCreatureRandomly(cr, trycentral, ExpProperties.rotation);
+        if (!cr.boundingBoxCollisions(0))
+        {
+            placed_ok = 1;
+            break;
+        }
+    }
+    if (!placed_ok)
+        Simulator.message("onBorn() could not avoid collisions.", 1);
 
 	if (cr.population.index == 0)
 	{
@@ -440,12 +441,12 @@ function ExpProperties_feed_set()
 #include "standard_props_eval.inc"
 
 property:
-id:cleardata
-name:Clear performance info
-type:p
+id:placement_mode
+name:Placement mode
+type:d 0 1
 help:~
-Sets the number of instances of each genotype to zero (as if it has never been evaluated).
-Genotype performance values stay intact, yet they are meaningless if a genotype has no instances.~
+0 = central placement (default)
+1 = random placement~
 
 state:
 id:notes

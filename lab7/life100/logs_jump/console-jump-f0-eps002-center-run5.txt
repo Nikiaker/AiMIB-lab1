@@ -1,0 +1,415 @@
+Argument values: path=/home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54, lib=None, sim=eval-allcriteria-mini.sim;deterministic.sim;recording-body-coords.sim;only-body.sim, genformat=0, initialgenotype=None, opt=jumpdistance, popsize=60, generations=300, tournament=7, pmut=0.9, pxov=0.0, hof_size=1, hof_savefile=genotypes_jump/HoF-jump-f0-eps002-center-run5.gen, max_numparts=20, max_numjoints=40, max_numneurons=0, max_numconnections=0, max_numgenochars=None, log_file=logs_jump/log-jump-f0-eps002-center-run5.json, stagnation_generations=None, plateau_escape=False, eps=0.02, placement=center
+Using Framsticks version: 5.4
+Home (writable) dir     : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+Resources dir           : /home/nikiaker/Projects/studia/stop2/sem2/algorytmy/lab1/framsticks/Framsticks54/data
+
+Available objects: ['CheckpointEvent', 'Collision', 'CrCollision', 'Creature', 'CreatureSettings', 'CreatureSignals', 'CreatureSnapshot', 'Dictionary', 'ExpProperties', 'ExpState', 'ExtValue', 'File', 'FunctionReference', 'GenMan', 'GenManStats', 'GenePool', 'GenePools', 'Geno', 'GenoConverters', 'Genotype', 'Interface', 'Joint', 'Loader', 'Math', 'MechJoint', 'MechPart', 'MessageCatcher', 'Model', 'ModelGeometry', 'ModelSymmetry', 'Neuro', 'NeuroClass', 'NeuroClassLibrary', 'NeuroDef', 'NeuroSignals', 'NeuronsSimEnabled', 'ODE', 'Orient', 'Part', 'Population', 'Populations', 'Ref', 'Signal', 'SignalView', 'SimilMeasure', 'SimilMeasureDistribution', 'SimilMeasureGreedy', 'SimilMeasureHungarian', 'Simulator', 'SlaveSimulators', 'StopEvent', 'String', 'UserScripts', 'Vector', 'WireframeAppearance', 'World', 'WorldMap', 'WorldSignals', 'XYZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'c_api', 'ctypes', 'home_dir', 'init', 'os', 're', 'res_dir', 'sim_params', 'stats', 'sys']
+
+Basic tests OK. Using settings: ['eval-allcriteria-mini.sim', 'deterministic.sim', 'recording-body-coords.sim', 'only-body.sim']
+
+Simulator.load: Loading from 'eval-allcriteria-mini.sim'
+Simulator.load: Loaded simulator settings from 'eval-allcriteria-mini.sim'
+Simulator.load: Loading from 'deterministic.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Parameter values that make the evaluation of a Framsticks creature deterministic.
+Loader.load:  The values turn off random noise, so evaluation of the same genotype will always yield the same performance.
+Loader.load:  The advantage is that you do not need to evaluate a genotype many times, and performance values are reliable.
+Loader.load:  The disadvantage is that evolved creatures are "overfitting", i.e. rely entirely on the specific environment,
+Loader.load:  and their behavior may be different in any other environment or (even slightly) changed conditions or parameter values,
+Loader.load:  so each creature evolved using these settings must be later inspected using exactly the same setup.
+Loader.load: 
+Loader.load:  Before loading this file, load base settings, e.g. "eval-allcriteria.sim".
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution.
+Simulator.load: Loaded simulator settings from 'deterministic.sim'
+Simulator.load: Loading from 'recording-body-coords.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  The recording of the "center of gravity" (or mass) of all Parts of a creature during its lifespan, and
+Loader.load:  the recording of coordinates of all Parts are stored as data->bodyrecording.
+Loader.load:  Use STORE_ALL_PART_COORDS below to decide how much data you need recorded - maybe only COG and no Parts.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=0 below, only COG is stored and the format is
+Loader.load:  [ [cog1x,cog1y,cog1z], [cog2x,cog2y,cog2z], [cog3x,cog3y,cog3z], ...]
+Loader.load:  where index numbers in the names are simulation steps.
+Loader.load:  So you get a vector of COG x,y,z coordinates repeated for every simulation step.
+Loader.load: 
+Loader.load:  If STORE_ALL_PART_COORDS=1 below, the format is more verbose with one more level of nesting, because after the COG,
+Loader.load:  the list of coordinates of all Parts follows (the first index in the names below is the simulation step, the second one is Part number)
+Loader.load:  [ [[cog1x,cog1y,cog1z], [p1_1x,p1_1y,p1_1z], [p1_2x,p1_2y,p1_2z], ...], ...]
+Loader.load: 
+Loader.load:  You can further limit the amount of stored data by recording coordinates less frequently - see onCreaturesStep() comment below.
+Loader.load:  Adjust 'Energy0' to achieve the lifespan you need.
+Loader.load:  'evalcount' should likely be 1 unless you need other performance criteria (like vertpos or distance) averaged from multiple evaluations.
+Loader.load:  Put this file in the "data" subdirectory within the Framsticks distribution unless you prefer to provide its path when loading.
+Simulator.load: Loaded simulator settings from 'recording-body-coords.sim'
+Simulator.load: Loading from 'only-body.sim'
+Loader.load: Comments read from file follow:
+Loader.load:  Turns off mutations in f0, f1, f4, fH related to brain (disables adding and modifying neurons)
+Simulator.load: Loaded simulator settings from 'only-body.sim'
+Using mutation rate from frams: 0.0
+gen	nevals	avg	stddev	min	max
+0  	60    	0  	0     	0  	0  
+1  	52    	0  	0     	0  	0  
+2  	57    	0  	0     	0  	0  
+3  	54    	0  	0     	0  	0  
+4  	55    	0  	0     	0  	0  
+5  	56    	0  	0     	0  	0  
+6  	56    	0  	0     	0  	0  
+7  	54    	0  	0     	0  	0  
+8  	51    	0  	0     	0  	0  
+9  	55    	0  	0     	0  	0  
+10 	52    	0  	0     	0  	0  
+11 	56    	0  	0     	0  	0  
+12 	55    	0  	0     	0  	0  
+13 	51    	0  	0     	0  	0  
+14 	54    	0  	0     	0  	0  
+15 	53    	0  	0     	0  	0  
+16 	57    	0  	0     	0  	0  
+17 	56    	0  	0     	0  	0  
+18 	57    	0  	0     	0  	0  
+19 	55    	0  	0     	0  	0  
+20 	52    	0  	0     	0  	0  
+21 	54    	0  	0     	0  	0  
+22 	52    	0  	0     	0  	0  
+23 	52    	0  	0     	0  	0  
+24 	53    	0  	0     	0  	0  
+25 	57    	0  	0     	0  	0  
+26 	52    	0  	0     	0  	0  
+27 	54    	0  	0     	0  	0  
+28 	50    	0  	0     	0  	0  
+29 	54    	0  	0     	0  	0  
+30 	54    	0  	0     	0  	0  
+31 	56    	0  	0     	0  	0  
+32 	55    	0  	0     	0  	0  
+33 	59    	0  	0     	0  	0  
+34 	55    	0  	0     	0  	0  
+35 	55    	0  	0     	0  	0  
+36 	53    	0  	0     	0  	0  
+37 	53    	0  	0     	0  	0  
+38 	54    	0  	0     	0  	0  
+39 	50    	0  	0     	0  	0  
+40 	57    	0  	0     	0  	0  
+41 	58    	0  	0     	0  	0  
+42 	51    	0  	0     	0  	0  
+43 	51    	0  	0     	0  	0  
+44 	51    	0  	0     	0  	0  
+45 	55    	0  	0     	0  	0  
+46 	56    	0  	0     	0  	0  
+47 	55    	0  	0     	0  	0  
+48 	54    	0  	0     	0  	0  
+49 	52    	0  	0     	0  	0  
+50 	57    	0  	0     	0  	0  
+51 	55    	0  	0     	0  	0  
+52 	56    	0  	0     	0  	0  
+53 	55    	0  	0     	0  	0  
+54 	58    	0  	0     	0  	0  
+55 	56    	0  	0     	0  	0  
+56 	51    	0  	0     	0  	0  
+57 	55    	0  	0     	0  	0  
+58 	53    	0  	0     	0  	0  
+59 	54    	0  	0     	0  	0  
+60 	52    	0  	0     	0  	0  
+61 	58    	0  	0     	0  	0  
+62 	58    	0  	0     	0  	0  
+63 	57    	0  	0     	0  	0  
+64 	58    	0  	0     	0  	0  
+65 	58    	0  	0     	0  	0  
+66 	52    	0  	0     	0  	0  
+67 	56    	0  	0     	0  	0  
+68 	56    	0  	0     	0  	0  
+69 	53    	0  	0     	0  	0  
+70 	52    	0  	0     	0  	0  
+71 	49    	0  	0     	0  	0  
+72 	58    	0  	0     	0  	0  
+73 	51    	0  	0     	0  	0  
+74 	54    	0  	0     	0  	0  
+75 	57    	0  	0     	0  	0  
+76 	53    	0  	0     	0  	0  
+77 	56    	0  	0     	0  	0  
+78 	51    	0  	0     	0  	0  
+79 	52    	0  	0     	0  	0  
+80 	55    	0  	0     	0  	0  
+81 	55    	0  	0     	0  	0  
+82 	53    	0  	0     	0  	0  
+83 	53    	0  	0     	0  	0  
+84 	55    	0  	0     	0  	0  
+85 	56    	0  	0     	0  	0  
+86 	57    	0  	0     	0  	0  
+87 	53    	0  	0     	0  	0  
+88 	52    	0  	0     	0  	0  
+89 	54    	0  	0     	0  	0  
+90 	52    	0  	0     	0  	0  
+91 	55    	0  	0     	0  	0  
+92 	56    	0  	0     	0  	0  
+93 	50    	0  	0     	0  	0  
+94 	53    	0  	0     	0  	0  
+95 	53    	0  	0     	0  	0  
+96 	52    	0  	0     	0  	0  
+97 	56    	0  	0     	0  	0  
+98 	53    	0  	0     	0  	0  
+99 	55    	0  	0     	0  	0  
+100	55    	0  	0     	0  	0  
+101	54    	0  	0     	0  	0  
+102	51    	0  	0     	0  	0  
+103	56    	0  	0     	0  	0  
+104	56    	0  	0     	0  	0  
+105	50    	0  	0     	0  	0  
+106	52    	0  	0     	0  	0  
+107	54    	0  	0     	0  	0  
+108	56    	0  	0     	0  	0  
+109	56    	0  	0     	0  	0  
+110	60    	0  	0     	0  	0  
+111	56    	0  	0     	0  	0  
+112	52    	0  	0     	0  	0  
+113	52    	0  	0     	0  	0  
+114	58    	0  	0     	0  	0  
+115	53    	0  	0     	0  	0  
+116	50    	0  	0     	0  	0  
+117	56    	0  	0     	0  	0  
+118	55    	0  	0     	0  	0  
+119	54    	0  	0     	0  	0  
+120	56    	0  	0     	0  	0  
+121	54    	0  	0     	0  	0  
+122	58    	0  	0     	0  	0  
+123	56    	0  	0     	0  	0  
+124	55    	0  	0     	0  	0  
+125	53    	0  	0     	0  	0  
+126	50    	0  	0     	0  	0  
+127	51    	0  	0     	0  	0  
+128	55    	0  	0     	0  	0  
+129	50    	0  	0     	0  	0  
+130	59    	0  	0     	0  	0  
+131	56    	0  	0     	0  	0  
+132	53    	0  	0     	0  	0  
+133	53    	0  	0     	0  	0  
+134	54    	0  	0     	0  	0  
+135	56    	0  	0     	0  	0  
+136	52    	0  	0     	0  	0  
+137	54    	0  	0     	0  	0  
+138	59    	0  	0     	0  	0  
+139	53    	0  	0     	0  	0  
+140	54    	0  	0     	0  	0  
+141	53    	0  	0     	0  	0  
+142	49    	0  	0     	0  	0  
+143	50    	0  	0     	0  	0  
+144	52    	0  	0     	0  	0  
+145	55    	0  	0     	0  	0  
+146	55    	0  	0     	0  	0  
+147	58    	0  	0     	0  	0  
+148	55    	0  	0     	0  	0  
+149	54    	0  	0     	0  	0  
+150	55    	0  	0     	0  	0  
+151	56    	0  	0     	0  	0  
+152	52    	0  	0     	0  	0  
+153	57    	0  	0     	0  	0  
+154	56    	0  	0     	0  	0  
+155	50    	0  	0     	0  	0  
+156	50    	0  	0     	0  	0  
+157	53    	0  	0     	0  	0  
+158	56    	0  	0     	0  	0  
+159	52    	0  	0     	0  	0  
+160	53    	0  	0     	0  	0  
+161	54    	0  	0     	0  	0  
+162	55    	0  	0     	0  	0  
+163	53    	0  	0     	0  	0  
+164	52    	0  	0     	0  	0  
+165	52    	0  	0     	0  	0  
+166	53    	0  	0     	0  	0  
+167	55    	0  	0     	0  	0  
+168	52    	0  	0     	0  	0  
+169	55    	0  	0     	0  	0  
+170	55    	0  	0     	0  	0  
+171	58    	0  	0     	0  	0  
+172	54    	0  	0     	0  	0  
+173	53    	0  	0     	0  	0  
+174	54    	0  	0     	0  	0  
+175	55    	0  	0     	0  	0  
+176	53    	0  	0     	0  	0  
+177	50    	0  	0     	0  	0  
+178	56    	0  	0     	0  	0  
+179	54    	0  	0     	0  	0  
+180	57    	0  	0     	0  	0  
+181	54    	0  	0     	0  	0  
+182	56    	0  	0     	0  	0  
+183	56    	0  	0     	0  	0  
+184	56    	0  	0     	0  	0  
+185	53    	0  	0     	0  	0  
+186	53    	0  	0     	0  	0  
+187	55    	0  	0     	0  	0  
+188	55    	0  	0     	0  	0  
+189	58    	0  	0     	0  	0  
+190	53    	0  	0     	0  	0  
+191	55    	0  	0     	0  	0  
+192	55    	0  	0     	0  	0  
+193	58    	0  	0     	0  	0  
+194	54    	0  	0     	0  	0  
+195	51    	0  	0     	0  	0  
+196	54    	0  	0     	0  	0  
+197	54    	0  	0     	0  	0  
+198	48    	0  	0     	0  	0  
+199	53    	0  	0     	0  	0  
+200	52    	0  	0     	0  	0  
+201	56    	0  	0     	0  	0  
+202	56    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+203	59    	0  	0     	0  	0  
+Selection: ignoring 2 infeasible solutions in a population of size 60
+204	57    	0  	0     	0  	0  
+205	52    	0  	0     	0  	0  
+Selection: ignoring 2 infeasible solutions in a population of size 60
+206	57    	0  	0     	0  	0  
+207	51    	0  	0     	0  	0  
+208	54    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+209	56    	0  	0     	0  	0  
+Selection: ignoring 2 infeasible solutions in a population of size 60
+210	55    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+211	56    	0  	0     	0  	0  
+Selection: ignoring 5 infeasible solutions in a population of size 60
+212	58    	0  	0     	0  	0  
+Selection: ignoring 4 infeasible solutions in a population of size 60
+213	54    	0  	0     	0  	0  
+214	59    	0  	0     	0  	0  
+Selection: ignoring 2 infeasible solutions in a population of size 60
+215	55    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+216	55    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+217	54    	0  	0     	0  	0  
+218	55    	0  	0     	0  	0  
+219	53    	0  	0     	0  	0  
+Selection: ignoring 1 infeasible solution in a population of size 60
+220	54    	0  	0     	0  	0  
+221	52    	0  	0     	0  	0  
+222	52    	1.0366e-05	7.89454e-05	0  	0.000611596
+Selection: ignoring 1 infeasible solution in a population of size 60
+223	52    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+224	48    	0         	0          	0  	0          
+225	56    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+226	57    	0         	0          	0  	0          
+227	50    	0         	0          	0  	0          
+228	51    	0         	0          	0  	0          
+229	51    	0         	0          	0  	0          
+230	52    	0         	0          	0  	0          
+231	56    	0         	0          	0  	0          
+232	53    	0         	0          	0  	0          
+233	54    	0         	0          	0  	0          
+234	55    	0         	0          	0  	0          
+235	54    	0         	0          	0  	0          
+236	56    	0         	0          	0  	0          
+237	57    	0         	0          	0  	0          
+238	55    	0         	0          	0  	0          
+239	54    	0         	0          	0  	0          
+Selection: ignoring 3 infeasible solutions in a population of size 60
+240	53    	0         	0          	0  	0          
+241	51    	0         	0          	0  	0          
+242	58    	0         	0          	0  	0          
+243	51    	0         	0          	0  	0          
+244	57    	0         	0          	0  	0          
+245	55    	0         	0          	0  	0          
+246	51    	0         	0          	0  	0          
+247	56    	0         	0          	0  	0          
+248	58    	0         	0          	0  	0          
+249	51    	0         	0          	0  	0          
+250	52    	0         	0          	0  	0          
+251	56    	0         	0          	0  	0          
+252	55    	0         	0          	0  	0          
+253	54    	0         	0          	0  	0          
+254	52    	0         	0          	0  	0          
+255	55    	0         	0          	0  	0          
+256	54    	0         	0          	0  	0          
+257	55    	0         	0          	0  	0          
+258	58    	0         	0          	0  	0          
+259	55    	0         	0          	0  	0          
+Selection: ignoring 2 infeasible solutions in a population of size 60
+260	54    	0         	0          	0  	0          
+261	55    	0         	0          	0  	0          
+262	56    	0         	0          	0  	0          
+263	56    	0         	0          	0  	0          
+264	51    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+265	57    	0         	0          	0  	0          
+Selection: ignoring 3 infeasible solutions in a population of size 60
+266	52    	0         	0          	0  	0          
+267	52    	0         	0          	0  	0          
+268	52    	0         	0          	0  	0          
+269	55    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+270	55    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+271	58    	0         	0          	0  	0          
+Selection: ignoring 3 infeasible solutions in a population of size 60
+272	56    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+273	55    	0         	0          	0  	0          
+274	57    	0         	0          	0  	0          
+Selection: ignoring 3 infeasible solutions in a population of size 60
+275	56    	0         	0          	0  	0          
+276	50    	0         	0          	0  	0          
+277	58    	0         	0          	0  	0          
+Selection: ignoring 2 infeasible solutions in a population of size 60
+278	57    	0         	0          	0  	0          
+279	58    	0         	0          	0  	0          
+280	57    	0         	0          	0  	0          
+281	55    	0         	0          	0  	0          
+282	49    	0         	0          	0  	0          
+283	56    	0         	0          	0  	0          
+284	48    	0         	0          	0  	0          
+285	55    	0         	0          	0  	0          
+286	55    	0         	0          	0  	0          
+287	57    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+288	56    	0         	0          	0  	0          
+289	54    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+290	54    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+291	50    	0         	0          	0  	0          
+292	55    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+293	54    	0         	0          	0  	0          
+294	57    	0         	0          	0  	0          
+295	51    	0         	0          	0  	0          
+296	56    	0         	0          	0  	0          
+Selection: ignoring 1 infeasible solution in a population of size 60
+297	51    	0         	0          	0  	0          
+Selection: ignoring 2 infeasible solutions in a population of size 60
+298	54    	0         	0          	0  	0          
+299	52    	0         	0          	0  	0          
+300	53    	0         	0          	0  	0          
+Best individuals:
+(0.0006115962776430588,) 	<--	 //0
+p:1.057, -0.65, -2.919, vr=0.879, 0.407, 0.788
+p:0.024, -0.455, -1.688, vr=0.404, 0.554, 0.523
+p:-0.029, -0.344, -2.329, fr=0.009, vr=0.407, 0.685, 0.437
+p:1.691, -0.088, -1.503, fr=0.268, vr=0.738, 0.422, 0.965
+p:0.8197982720438308, -0.018928786008297394, -1.3470650855525592, fr=0.059, vr=0.806, 0.331, 0.824
+p:0.0555580243358309, -0.18053559511060246, -2.5632670321216717, vr=0.339, 0.464, 0.418
+p:0.232, -0.082, -1.979, fr=0.928, vr=0.486, 0.64, 0.468
+p:0.08394399124758023, -1.2992393203764663, -2.6955914861171633, fr=0.307, vr=0.226, 0.559, 0.255
+p:0.194, -0.301, -1.368, fr=0.637, vr=0.856, 0.329, 0.729
+p:0.573, 1.179, -1.191, vr=0.928, 0.28, 0.89
+j:1, 0, vr=0.6275, 0.48350000000000004, 0.6819999999999999
+j:2, 1, vr=0.40549999999999997, 0.6195, 0.48
+j:3, 0, vr=0.7945, 0.4175, 0.903
+j:4, 7, vr=0.8425, 0.369, 0.806
+j:2, 3, vr=0.5725, 0.5535, 0.701
+j:6, 1, vr=0.445, 0.597, 0.49550000000000005
+j:9, 4, vr=0.831, 0.33, 0.7765
+j:2, 5, vr=0.373, 0.5745, 0.4275
+j:5, 7, vr=0.595, 0.4385, 0.6295
+j:8, 9, vr=0.892, 0.3045, 0.8095
+j:9, 5, vr=0.5975, 0.3965, 0.5735
+j:6, 2, vr=0.4465, 0.6625000000000001, 0.4525
+j:0, 7, vr=0.5525, 0.483, 0.5215000000000001
+j:4, 5, vr=0.5725, 0.3975, 0.621
+j:4, 0, vr=0.8425, 0.369, 0.806
+j:9, 2, vr=0.6675, 0.48250000000000004, 0.6635
+
+Saved 'genotypes_jump/HoF-jump-f0-eps002-center-run5.gen' (1)
+Log saved to logs_jump/log-jump-f0-eps002-center-run5.json
+Elapsed time: 854.63 seconds
+VMNeuronManager.autoload: Neuro classes added: S1 PIDV PIDP Thr SeeLight2 Nn Light SeeLight Delay S0 
+UserScripts.autoload: 20 user scripts added.
